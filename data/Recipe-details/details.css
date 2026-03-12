@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body,
+html {
+    direction: rtl;
+    background-color: #F8F6F6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    border-bottom: 1px solid #F7E6DF;
+    padding: 20px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    transition: all 0.3s ease;
+
+}
+
+.scrolled-bg {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+nav .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav .row,
+.col,
+.logo,
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+nav .row .logo i {
+    color: white;
+    background-color: #EC5B13;
+    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .row .logo h1 {
+    color: #0F172A;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+nav .row .col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .row ul li {
+    padding: 0px 10px;
+    color: #0F172A;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav .row ul li:hover {
+    color: #EC5B13;
+}
+
+nav .row ul li .active {
+    color: #EC5B13;
+}
+
+nav .row .col .search {
+    position: relative;
+}
+
+nav .row .col .search i {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: #EC5B13;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+nav .row .col .search input {
+    padding: 8px 40px 8px 16px;
+    color: #0F172A;
+    background-color: #F7E6DF;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+
+}
+
+nav .row .search input:focus {
+    border: 2px solid #F1A884;
+}
+
+
+nav .row .col .notification-icon i,
+.user-icon i {
+    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+nav .row .col .notification-icon i {
+    color: #EC5B13;
+    background-color: #F7E6DF;
+    transition: all 0.3s ease;
+}
+
+nav .row .col .notification-icon i:hover {
+    color: white;
+    background-color: #EC5B13;
+
+}
+
+nav .row .col .user-icon i {
+    color: white;
+    background-color: #EC5B13;
+    font-size: 14px;
+    box-shadow: 4px 4px 10px #F7E6DF;
+}
