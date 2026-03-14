@@ -73,12 +73,19 @@ function addToCart(recipe) {
         cart.push(cartItem);
     }
     localStorage.setItem('cart',JSON.stringify(cart));
-   var dialog = document.getElementById('successDialog');
+  var dialog = document.getElementById('successDialog');
 dialog.showModal();
-setTimeout(() => dialog.close(), 3000); // بيختفي بعد 3 ثواني
+document.body.style.overflow = 'hidden';
 
+document.getElementById('closeDialog').onclick = function () {
+    dialog.close();
+    document.body.style.overflow = '';
+};
+
+document.getElementById('goToCart').onclick = function () {
+    window.location.href = '../Cart-page/cart.html';
+};
 }
-
 function displayRecipeDetails(recipe) {
     console.log(recipe)
     detailsRow.innerHTML = `

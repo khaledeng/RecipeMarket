@@ -594,70 +594,81 @@ button:active {
 
 /************************* Dialog ****************************/
 dialog {
+     z-index: 99999; /* ✅ أكبر من الـ nav */
+    margin: auto;
     border: none;
-    border-radius: 16px;
-    padding: 16px 24px;
-    width: fit-content;
-    min-width: 350px;
-    text-align: right;
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
-    border-right: 4px solid #EC5B13;
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
+    border-radius: 24px;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.15);
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform:scale(1);
+    }
 }
 
 dialog::backdrop {
-    background: transparent; 
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease;
 }
 
-.dialog .container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .dialog-icon i {
-    font-size: 28px;
+    font-size: 60px;
     color: #EC5B13;
 }
 
 dialog h3 {
     color: #0F172A;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 700;
-    margin: 0 0 2px;
+    margin: 16px 0px 8px;
 }
 
 dialog p {
     color: #64748B;
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .dialog-btns {
     display: flex;
-    gap: 8px;
-    margin-top: 0;
+    gap: 12px;
+    margin-top: 24px;
 }
 
 .dialog-btns button {
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
+    flex: 1;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    white-space: nowrap;
 }
 
 #goToCart {
     background-color: #EC5B13;
     color: white;
-    box-shadow: 0px 4px 12px rgba(236, 91, 19, 0.4);
+    box-shadow: 0px 8px 20px rgba(236, 91, 19, 0.4);
 }
 
 #goToCart:hover {
