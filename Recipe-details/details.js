@@ -109,9 +109,9 @@ function displayRecipeDetails(recipe){
                     <div class="serving-size">
                         <h3><i class="fa-solid fa-users"></i> عدد الأشخاص</h3>
                         <div class="serving-options">
-                            <button class="serving-btn active">2 أشخاص</button>
-                            <button class="serving-btn ">4 أشخاص</button>
-                            <button class="serving-btn ">6 أشخاص</button>
+                            <button class="serving-btn active" >2 أشخاص</button>
+                            <button class="serving-btn" >4 أشخاص</button>
+                            <button class="serving-btn " >6 أشخاص</button>
                         </div>
                     </div>
                     <div class="ingredients">
@@ -151,5 +151,66 @@ function displayRecipeDetails(recipe){
                 </div>
      `
      
+     // 1. متغير يحفظ المكونات المختارة
+let selectedIngredients = recipe.ingredients.map(ing => ({ ...ing, selected: true }));
+
+// 2. دالة تحسب السعر
+function calcTotal() {
+    let total = selectedIngredients
+        .filter(ing => ing.selected)
+        .reduce((sum, ing) => sum + ing.price, 0);
+    document.querySelector('.add-to-cart .price p').textContent = total + ' ر.س';
+}
+// 3. لما يغير عدد الأشخاص
+document.querySelectorAll('.serving-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        document.querySelectorAll('.serving-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        let newServings = parseInt(this.dataset.servings);
+        let ratio = newServings / recipe.servings;
+
+        selectedIngredients = selectedIngredients.map(ing => ({
+            ...ing,
+            quantity: +(ing.quantity * ratio).toFixed(1)
+        }));
+
+        // تحديث الكميات في الصفحة
+        document.querySelectorAll('.quantity').forEach((el, i) => {
+            el.textContent = `${selectedIngredients[i].quantity} ${unitMap[selectedIngredients[i].unit] || selectedIngredients[i].unit}`;
+        });
+    });
+});
+// 4. لما يشيل checkbox
+document.querySelectorAll('.ingredient input[type="checkbox"]').forEach((checkbox, i) => {
+    checkbox.addEventListener('change', function () {
+        selectedIngredients[i].selected = this.checked;
+        calcTotal();
+    });
+});
+// 5. زرار أضف للسلة
+document.querySelector('.add-btn button').addEventListener('click', function () {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    let cartItem = {
+        recipeId: recipe.id,
+        recipeName: recipe.name,
+        recipeImage: recipe.image,
+        ingredients: selectedIngredients.filter(ing => ing.selected),
+        total: selectedIngredients
+            .filter(ing => ing.selected)
+            .reduce((sum, ing) => sum + ing.price, 0)
+    };
+    // لو الوصفة موجودة قبل كده، حدّثها
+    let existingIndex = cart.findIndex(item => item.recipeId == recipe.id);
+    if (existingIndex >= 0) {
+        cart[existingIndex] = cartItem;
+    } else {
+        cart.push(cartItem);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = '../cart/index.html';
+});
 }
 
