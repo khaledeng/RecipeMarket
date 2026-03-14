@@ -66,25 +66,25 @@ function addToCart(recipe) {
             .reduce((sum, ing) => sum + ing.price, 0)
     }
     var existingIndex = cart.findIndex(item => item.recipeId == recipe.id);
-    if(existingIndex >= 0){
+    if (existingIndex >= 0) {
         cart[existingIndex] = cartItem;
     }
-    else{
+    else {
         cart.push(cartItem);
     }
-    localStorage.setItem('cart',JSON.stringify(cart));
-  var dialog = document.getElementById('successDialog');
-dialog.showModal();
-document.body.style.overflow = 'hidden';
+    localStorage.setItem('cart', JSON.stringify(cart));
+    var dialog = document.getElementById('successDialog');
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
 
-document.getElementById('closeDialog').onclick = function () {
-    dialog.close();
-    document.body.style.overflow = '';
-};
+    document.getElementById('closeDialog').onclick = function () {
+        dialog.close();
+        document.body.style.overflow = '';
+    };
 
-document.getElementById('goToCart').onclick = function () {
-    window.location.href = '../Cart-page/cart.html';
-};
+    document.getElementById('goToCart').onclick = function () {
+        window.location.href = '../Cart-page/cart.html';
+    };
 }
 function displayRecipeDetails(recipe) {
     console.log(recipe)
@@ -201,7 +201,7 @@ function displayRecipeDetails(recipe) {
     });
 
     document.getElementById('addBtn').addEventListener('click', function () {
-       addToCart(recipe);
+        addToCart(recipe);
     });
 }
 
