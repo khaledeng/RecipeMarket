@@ -97,7 +97,7 @@ detailsBtn.innerText="عرض التفاصيل";
 
 detailsBtn.onclick = function(id){
 return function(){
-window.location.href="details.html?id="+id;
+window.location.href="../Recipe-details/details.html?id="+id;
 }
 }(r.id);
 
