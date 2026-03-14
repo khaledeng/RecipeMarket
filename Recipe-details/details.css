@@ -304,6 +304,8 @@ button:active {
 /************************* Details Left Side ****************************/
 .details .left-side {
     align-items: self-start;
+     flex: 1;
+    width: 0; 
 }
 
 .details .left-side {

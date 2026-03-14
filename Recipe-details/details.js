@@ -151,7 +151,7 @@ function displayRecipeDetails(recipe){
                 </div>
      `
      
-let selectedIngredients = recipe.ingredients.map(ing => ({ ...ing, selected: true }));
+var selectedIngredients = recipe.ingredients.map(ing => ({ ...ing, selected: true }));
 
 function calcTotal() {
     let total = selectedIngredients
