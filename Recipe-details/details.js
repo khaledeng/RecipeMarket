@@ -1,5 +1,6 @@
 var detailsRow = document.getElementById("detailsRow");
 var nav = document.querySelector('nav');
+var selectedIngredients = [];
 
 var categoryMap = {
     "breakfast": "الفطار",
@@ -38,23 +39,61 @@ document.addEventListener('scroll', function () {
 
 
 var xhr = new XMLHttpRequest();
-xhr.open('Get',`https://raw.githubusercontent.com/khaledeng/RecipeMarket/refs/heads/main/data/recipes.json`);
+xhr.open('Get', `https://raw.githubusercontent.com/khaledeng/RecipeMarket/refs/heads/main/data/recipes.json`);
 xhr.send();
 xhr.responseType = "json";
-xhr.onload = function(){
+xhr.onload = function () {
     var recipes = xhr.response.recipes;
     var recipe = recipes.find(r => r.id == id);
     displayRecipeDetails(recipe);
 }
 
-function displayRecipeDetails(recipe){
-     console.log(recipe)
-     detailsRow.innerHTML = `
+
+function calcTotal() {
+    var total = selectedIngredients.filter(ing => ing.selected)
+        .reduce((sum, ing) => sum + ing.price, 0);
+    document.querySelector('#totalPrice').innerHTML = `${total} ر.س`
+}
+
+function addToCart(recipe) {
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    var cartItem = {
+        recipeId: recipe.id,
+        recipeName: recipe.name,
+        recipeImg: recipe.image,
+        recipeIngredients: selectedIngredients.filter(ing => ing.selected),
+        total: selectedIngredients.filter(ing => ing.selected)
+            .reduce((sum, ing) => sum + ing.price, 0)
+    }
+    var existingIndex = cart.findIndex(item => item.recipeId == recipe.id);
+    if (existingIndex >= 0) {
+        cart[existingIndex] = cartItem;
+    }
+    else {
+        cart.push(cartItem);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    var dialog = document.getElementById('successDialog');
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
+
+    document.getElementById('closeDialog').onclick = function () {
+        dialog.close();
+        document.body.style.overflow = '';
+    };
+
+    document.getElementById('goToCart').onclick = function () {
+        window.location.href = '../Cart-page/cart.html';
+    };
+}
+function displayRecipeDetails(recipe) {
+    console.log(recipe)
+    detailsRow.innerHTML = `
       <div class="col right-side">
                     <div class="recipe-nav">
-                        <a href="">الرئيسية</a>
+                        <a href="../Home-page/Index.html">الرئيسية</a>
                         <i class="fa-solid fa-chevron-left"></i>
-                        <a href="">وصفات رئيسية</a>
+                        <a href="../Recipes-page/recipes.html">الوصفات</a>
                         <i class="fa-solid fa-chevron-left"></i>
                         <span>${recipe.name}</span>
                     </div>
@@ -79,10 +118,10 @@ function displayRecipeDetails(recipe){
                     <div class="add-to-cart">
                         <div class="price">
                             <span>السعر الإجمالي</span>
-                            <p>${recipe.price} ر.س</p>
+                            <p id="totalPrice">${recipe.price} ر.س</p>
                         </div>
                         <div class="add-btn">
-                            <button><i class="fa-solid fa-cart-arrow-down"></i> أضف المكونات للسلة</button>
+                            <button id="addBtn"><i class="fa-solid fa-cart-arrow-down" ></i> أضف المكونات للسلة</button>
                         </div>
                         <div class="paragraph">
                             <p>سيتم إضافة جميع المكونات المختارة إلى سلة التسوق الخاصة بك</p>
@@ -120,9 +159,9 @@ function displayRecipeDetails(recipe){
                             <span>تحديد الكل</span>
                         </div>
                         <div class="ingredient-card">
-                        ${recipe.ingredients.map(ingredient =>`<label class="ingredient">
+                        ${recipe.ingredients.map(ingredient => `<label class="ingredient">
                                 <div class="check">
-                                    <input type="checkbox" name="" id="" checked>
+                                    <input type="checkbox" name="" class="checkInput" checked>
                                     <div class="ingredient-text">
                                         <p>${ingredient.name}</p>
                                         <p class="quantity">${ingredient.quantity} ${unitMap[ingredient.unit]}</p>
@@ -134,11 +173,11 @@ function displayRecipeDetails(recipe){
                         </div>
                         <div class="steps">
                             <h3><i class="fa-solid fa-list-ol"></i> خطوات التحضير</h3>
-                            ${recipe.instructions.map((step,index) => `
+                            ${recipe.instructions.map((step, index) => `
                                  <div class="step">
                                 <div class="count">
                                     <div class="number">${index + 1}</div>
-                                   ${index < recipe.instructions.length - 1 ? ` <div class="line"></div>`:''} 
+                                   ${index < recipe.instructions.length - 1 ? ` <div class="line"></div>` : ''} 
                                 </div>
                                 <div class="step-text">
                                     <p>${step}</p>
@@ -150,23 +189,19 @@ function displayRecipeDetails(recipe){
                     </div>
                 </div>
      `
-     
-var selectedIngredients = recipe.ingredients.map(ing => ({ ...ing, selected: true }));
 
-function calcTotal() {
-    let total = selectedIngredients
-        .filter(ing => ing.selected)
-        .reduce((sum, ing) => sum + ing.price, 0);
-    document.querySelector('.add-to-cart .price p').textContent = total + ' ر.س';
-}
+    selectedIngredients = recipe.ingredients.map(ing => ({ ...ing, selected: true }));
 
-document.querySelectorAll('.ingredient input[type="checkbox"]').forEach((checkbox, i) => {
-    checkbox.addEventListener('change', function () {
-        selectedIngredients[i].selected = this.checked;
-        calcTotal();
+    var checkInput = document.querySelectorAll('.checkInput')
+    checkInput.forEach((checkbox, i) => {
+        checkbox.addEventListener('change', function () {
+            selectedIngredients[i].selected = this.checked;
+            calcTotal();
+        });
     });
-});
 
-
+    document.getElementById('addBtn').addEventListener('click', function () {
+        addToCart(recipe);
+    });
 }
 
