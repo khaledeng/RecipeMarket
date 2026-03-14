@@ -14,7 +14,7 @@ var recipes = [];
 var filteredRecipes = [];
 
 var currentPage = 1;
-var pageSize = 6;
+var pageSize = 12;
 
 var favorites = JSON.parse(localStorage.getItem("favoriteRecipes") || "[]");
 
