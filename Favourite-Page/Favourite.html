@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الوصفات المفضلة - سفرة</title>
+  <link rel="stylesheet" href="favourite.css" />
+</head>
+<body>
+
+    <nav class="scrolled-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h1>وصفاتي</h1>
+                    </div>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="" class="active">الرئيسية</a></li>
+                            <li><a href="">الوصفات</a></li>
+                            <li><a href="">المفضلات</a></li>
+                            <li><a href="">السلة</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="search">
+                        <input type="search" name="" id="" placeholder="ابحث عن وصفة ...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="notification-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <div class="user-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+  <main class="favorites-main">
+
+    <div class="favorites-header">
+      <h1 class="favorites-title">الوصفات المفضلة</h1>
+      <p class="favorites-subtitle">جميع وصفاتك المختارة ومكوناتها في مكان واحد</p>
+      <button class="clear-all-btn" id="clearAllBtn">🗑️ مسح الكل</button>
+    </div>
+
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="dinner">وجبات رئيسية</button>
+      <button class="filter-btn" data-filter="dessert">حلويات</button>
+      <button class="filter-btn" data-filter="lunch">غداء</button>
+      <button class="filter-btn" data-filter="breakfast">فطار</button>
+    </div>
+
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <div class="empty-icon">💔</div>
+      <h3>لا توجد وصفات مفضلة</h3>
+      <p>ابدأ بإضافة وصفاتك المفضلة من صفحة الوصفات</p>
+    </div>
+
+    <div class="recipes-grid" id="recipesGrid"></div>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-icon">🗑️</div>
+      <h2>هل أنت متأكد من مسح جميع الوصفات المفضلة؟</h2>
+      <p>سيؤدي هذا الإجراء إلى إزالة جميع الوصفات من قائمتك المفضلة ولا يمكن التراجع عنه.</p>
+      <button class="confirm-btn" id="confirmClearBtn">🗑️ نعم، امسح الكل</button>
+      <button class="cancel-btn" id="cancelClearBtn">إلغاء</button>
+    </div>
+  </div>
+
+  <!-- Notification -->
+  <div class="notification" id="notific
