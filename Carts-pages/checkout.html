@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إتمام عملية الشراء</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="checkoutStyle.css" />
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header class="topbar">
+    <div class="my-recipes">
+      <span class="recipes-icon">🍴</span>
+      <span class="recipes-text">وصفاتي</span>
+    </div>
+    <div class="topbar-right">
+      <a href="../Home-page/Index.html">الرئيسية</a>
+      <a href="../recipes.html">الوصفات</a>
+      <a href="../favorite.html">المفضلة</a>
+      <a href="cart.html">السلة</a>
+    </div>
+    <div class="top-search">
+      <input type="text" placeholder="ابحث عن وصفة أو مكون..." />
+      <span class="search-icon">🔍</span>
+    </div>
+    <div class="topbar-left">
+      <button class="avatar-btn">👤</button>
+      <button class="notif-btn">🔔</button>
+    </div>
+  </header>
+
+  <!-- المحتوى -->
+  <div class="page-wrapper">
+    <h1 class="page-title">إتمام عملية الشراء</h1>
+
+    <div class="checkout-layout">
+
+      <!-- اليمين: التفاصيل -->
+      <div class="checkout-main">
+
+        <!-- عنوان التوصيل -->
+        <div class="card">
+          <div class="card-title">
+            <span>📍</span> عنوان التوصيل
+          </div>
+
+          <div class="map-placeholder">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.6!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ5LjAiTiA0NsKwNDAnMzEuMSJF!5e0!3m2!1sar!2ssa!4v1234567890"
+              width="100%" height="200" style="border:0;border-radius:10px;" allowfullscreen loading="lazy">
+            </iframe>
+          </div>
+
+          <div class="fields-row">
+            <div class="field">
+              <label>المدينة</label>
+              <input type="text" value="الرياض" />
+            </div>
+            <div class="field">
+              <label>الحي</label>
+              <input type="text" placeholder="حي النرجس" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>تفاصيل العنوان</label>
+            <input type="text" placeholder="اسم الشارع، رقم المبنى، رقم الشقة" />
+          </div>
+        </div>
+
+        <!-- طريقة الدفع -->
+        <div class="card">
+          <div class="card-title">
+            <span>💳</span> طريقة الدفع
+          </div>
+
+          <div class="pay-options">
+            <div class="pay-option active" onclick="selectPay(this)">
+              <span class="pay-icon">💳</span>
+              <div>
+                <div class="pay-name">بطاقة ائتمان / مدى</div>
+                <div class="pay-sub">دفع آمن وسريع</div>
+              </div>
+              <span class="check">✔</span>
+            </div>
+            <div class="pay-option" onclick="selectPay(this)">
+              <span class="pay-icon">💵</span>
+              <div>
+                <div class="pay-name">الدفع عند الاستلام</div>
+                <!-- <div class="pay-sub">رسوم إضافية 15 ر.س</div> -->
+              </div>
+              <span class="check">✔</span>
+            </div>
+          </div>
+
+          <div class="card-fields" id="card-fields">
+            <div class="field">
+              <label>رقم البطاقة</label>
+              <input type="text" placeholder="**** **** **** ****" maxlength="19" id="card-num" />
+            </div>
+            <div class="fields-row">
+              <div class="field">
+                <label>تاريخ الانتهاء</label>
+                <input type="text" placeholder="MM/YY" maxlength="5" />
+              </div>
+              <div class="field">
+                <label>رمز الأمان (CVV)</label>
+                <input type="text" placeholder="***" maxlength="3" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- اليسار: ملخص الطلب -->
+      <div class="checkout-summary">
+        <div class="summary-card">
+          <div class="summary-title">ملخص الطلب</div>
+
+          <div class="summary-rows">
+            <div class="s-row"><span>قيمة المنتجات</span><span id="products-total">0 ج.م</span></div>
+            <div class="s-row"><span>رسوم التوصيل</span><span class="free" id="delivery-cost">مجاني</span></div>
+            <div class="s-row"><span>ضريبة القيمة المضافة (15%)</span><span id="tax-total">0 ج.م</span></div>
+          </div>
+
+          <div class="s-total">
+            <span>الإجمالي النهائي</span>
+            <div>
+              <span class="total-num" id="final-total">0</span>
+              <span class="total-cur">ج.م</span>
+            </div>
+          </div>
+
+          <button class="btn-confirm" onclick="confirmOrder()">تأكيد الطلب</button>
+
+          <p class="terms">بالضغط على "تأكيد الطلب"، فإنك توافق على الشروط والأحكام وسياسة الخصوصية الخاصة بنا.</p>
+
+          <div class="security-icons">
+            <span>🛡️</span>
+            <span>🔒</span>
+            <span>✅</span>
+          </div>
+
+          <div class="pay-logos">
+            <span>mada</span>
+            <span>VISA</span>
+            <span>MC</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="checkoutScript.js"></script>
+</body>
+</html>

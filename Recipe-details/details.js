@@ -83,7 +83,7 @@ function addToCart(recipe) {
     };
 
     document.getElementById('goToCart').onclick = function () {
-        window.location.href = '../Cart-page/cart.html';
+        window.location.href ="../Carts-pages/cart.html";
     };
 }
 function displayRecipeDetails(recipe) {
