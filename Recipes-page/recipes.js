@@ -58,6 +58,48 @@ var data = filteredRecipes.slice(start,end);
 
 resultsCount.innerText = filteredRecipes.length + " عدد الوصفات";
 
+if(data.length === 0){
+
+var emptyState = document.createElement("div");
+emptyState.classList.add("empty-state");
+
+var icon = document.createElement("div");
+icon.classList.add("empty-state-icon");
+icon.innerText = "🔍";
+
+var title = document.createElement("h3");
+title.innerText = "لا توجد وصفات";
+
+var desc = document.createElement("p");
+desc.innerText = "لم نجد أي وصفات تطابق بحثك. جرب تغيير الفلاتر أو مسح البحث.";
+
+var clearBtn = document.createElement("button");
+clearBtn.classList.add("clear-filters-btn");
+clearBtn.innerText = "مسح الفلاتر";
+
+clearBtn.onclick = function(){
+search.value="";
+timeFilter.value=60;
+timeValue.innerText=60;
+mealRadios.forEach(function(r){
+r.checked=r.value=="";
+});
+dietRadios.forEach(function(r){
+r.checked=r.value=="";
+});
+filteredRecipes=recipes;
+currentPage=1;
+showPage();
+};
+
+emptyState.append(icon,title,desc,clearBtn);
+container.append(emptyState);
+
+pagination.style.display = "none";
+
+return;
+}
+
 for(var r of data){
 
 var card = document.createElement("div");
@@ -69,6 +111,14 @@ imageDiv.classList.add("image");
 
 var img = document.createElement("img");
 img.src = r.image;
+
+img.style.cursor = "pointer";
+
+img.onclick = function(id){
+return function(){
+window.location.href="../Recipe-details/details.html?id="+id;
+}
+}(r.id);
 
 var rating = document.createElement("div");
 rating.classList.add("rating");
@@ -103,17 +153,14 @@ window.location.href="../Recipe-details/details.html?id="+id;
 
 
 
-var favBtn = document.createElement("button");
-favBtn.classList.add("fav-btn");
+var favHeart = document.createElement("button");
+favHeart.classList.add("fav-heart");
 
 if(favorites.includes(r.id)){
-favBtn.classList.add("active");
-favBtn.innerText="مفضلة";
-}else{
-favBtn.innerText="أضف للمفضلة";
+favHeart.classList.add("active");
 }
 
-favBtn.onclick = function(id,btn){
+favHeart.onclick = function(id,btn){
 
 return function(){
 
@@ -124,14 +171,12 @@ return x!=id
 });
 
 btn.classList.remove("active");
-btn.innerText="أضف للمفضلة";
 
 }else{
 
 favorites.push(id);
 
 btn.classList.add("active");
-btn.innerText="مفضلة";
 
 }
 
@@ -139,10 +184,12 @@ saveFavorites();
 
 }
 
-}(r.id,favBtn);
+}(r.id,favHeart);
 
 
-btnBox.append(detailsBtn,favBtn);
+btnBox.append(detailsBtn);
+
+imageDiv.append(favHeart);
 
 card.append(imageDiv,title,time,btnBox);
 
