@@ -23,8 +23,8 @@
                     </div>
                     <div class="nav-links">
                         <ul>
-                            <li><a href="" class="active">الرئيسية</a></li>
-                            <li><a href="">الوصفات</a></li>
+                            <li><a href="../Home-page/Index.html" class="active">الرئيسية</a></li>
+                            <li><a href="../Recipes-page/recipes.html">الوصفات</a></li>
                             <li><a href="">المفضلات</a></li>
                             <li><a href="">السلة</a></li>
                         </ul>
@@ -50,54 +50,26 @@
     <!-- Details-start -->
     <section class="details">
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="recipe-nav">
-                        <a href="">الرئيسية</a>
-                        <i class="fa-solid fa-chevron-left"></i>
-                        <a href="">وصفات رئيسية</a>
-                        <i class="fa-solid fa-chevron-left"></i>
-                        <span>دجاج مشوي بالزعتر والليمون</span>
-                    </div>
-                    <div class="recipe-img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu0cghpksgr3ibY1OisQKr12lboANWilJAibQle9KQgQqXbuaq683JeMSVPJ26H5ighM-VdIPKAEVVwrWD3a7gIGI4gvqx4M8hlSmSlG9o0PRMVva8gBUHkt402OTScAHCicb_mhblQGiDWpz8cviVTCGzQaPsDzfzGqp569oaEP8PIIPuGd6IbVCBz0da9qYn5wZHQ_sA4seBfIkJ1HDrthX1A6jAVesoBvH7ixbars_22FBWw4CIFCK04vA3OXqyE1Oi8dkDGQ"
-                            alt="">
-                    </div>
-                    <div class="nutrition">
-                            <div class="card">
-                                <p>سعرات حرارية</p>
-                                <h3>450</h3>
-                            </div>
-                            <div class="card">
-                                <p>بروتين</p>
-                                <h3>35جم</h3>
-                            </div>
-                            <div class="card">
-                                <p>كربوهيدرات</p>
-                                <h3>12جم</h3>
-                        </div>
-                    </div>
-                    <div class="add-to-cart">
-                        <div class="price">
-                            <span>السعر الإجمالي</span>
-                            <p>75.00 ر.س</p>
-                        </div>
-                        <div class="add-btn">
-                            <button><i class="fa-solid fa-cart-arrow-down"></i> أضف المكونات للسلة</button>
-                        </div>
-                        <div class="paragraph">
-                            <p>سيتم إضافة جميع المكونات المختارة إلى سلة التسوق الخاصة بك</p>
-                        </div>
-                    </div>
-                </div>
-
-
+            <div class="row"  id="detailsRow">
+               
             </div>
         </div>
     </section>
     <!-- Details-end -->
-
-
+     
+<dialog id="successDialog">
+    <div class="dialog-content">
+        <div class="dialog-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3>تمت الإضافة بنجاح!</h3>
+        <p>تم إضافة المكونات إلى سلة التسوق</p>
+        <div class="dialog-btns">
+            <button id="goToCart">عرض السلة</button>
+            <button id="closeDialog">متابعة التسوق</button>
+        </div>
+    </div>
+</dialog>
     <script src="./details.js"></script>
 </body>
 
