@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: #f4f7fb;
+  color: #2a2a2a;
+  direction: rtl;
+}
+
+/* ── هيدر (نفس بتاع باقي الصفحات) ── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 28px;
+  background: white;
+  border-bottom: 1px solid #e7eaf3;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.my-recipes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+}
+
+.recipes-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ff6200;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.recipes-text { font-size: 16px; }
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-right a {
+  color: #33475b;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.topbar-right a:hover,
+.topbar-right a.active {
+  color: #ff6200;
+  border-color: #ff6200;
+}
+
+.top-search {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.top-search input {
+  width: 100%;
+  border: 2px solid #e8ecf4;
+  border-radius: 50px;
+  padding: 9px 40px 9px 16px;
+  font-size: 14px;
+  font-family: 'Tajawal', sans-serif;
+  outline: none;
+}
+
+.top-search input:focus { border-color: #ff6200; }
+
+.top-search .search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.topbar-left { display: flex; gap: 6px; }
+
+.avatar-btn, .notif-btn {
+  border: none;
+  background: #f0f4ff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.avatar-btn:hover, .notif-btn:hover {
+  background: #ff6200;
+  color: white;
+}
+
+/* ── الصفحة ── */
+.page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+}
+
+/* ── اللايوت: flex ── */
+.checkout-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.checkout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkout-summary {
+  width: 300px;
+  position: sticky;
+  top: 80px;
+}
+
+/* ── البطاقة ── */
+.card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e8edf5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── الخريطة ── */
+.map-placeholder {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+}
+
+/* ── الحقول ── */
+.fields-row {
+  display: flex;
+  gap: 14px;
+}
+
+.fields-row .field { flex: 1; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+}
+
+.field input {
+  border: 1.5px solid #e8edf5;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'Tajawal', sans-serif;
+  outline: none;
+  background: #f9fafb;
+  color: #2a2a2a;
+}
+
+.field input:focus { border-color: #ff6200; background: white; }
+
+/* ── خيارات الدفع ── */
+.pay-options {
+  display: flex;
+  gap: 12px;
+}
+
+.pay-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 2px solid #e8edf5;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pay-option:hover { border-color: #ff6200; }
+
+.pay-option.active {
+  border-color: #ff6200;
+  background: #fff3ec;
+}
+
+.pay-icon { font-size: 22px; }
+
+.pay-name { font-weight: 700; font-size: 14px; }
+.pay-sub  { font-size: 12px; color: #8a93a8; margin-top: 2px; }
+
+.check {
+  margin-right: auto;
+  color: #ff6200;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.pay-option.active .check { opacity: 1; }
+
+.card-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── ملخص الطلب ── */
+.summary-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e8edf5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.summary-title {
+  font-size: 17px;
+  font-weight: 900;
+  color: #1a1a2e;
+}
+
+.summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.s-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  font-size: 14px;
+  color: #555;
+  border-bottom: 1px dashed #e8edf5;
+}
+
+.s-row:last-child { border-bottom: none; }
+
+.free { color: #22c55e; font-weight: 700; }
+
+.s-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 2px solid #e8edf5;
+  font-weight: 900;
+  font-size: 15px;
+  color: #1a1a2e;
+}
+
+.total-num {
+  font-size: 28px;
+  font-weight: 900;
+  color: #ff6200;
+}
+
+.total-cur {
+  font-size: 14px;
+  color: #ff6200;
+  margin-right: 4px;
+}
+
+.btn-confirm {
+  width: 100%;
+  padding: 14px;
+  background: #ff6200;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'Tajawal', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-confirm:hover { background: #e55a00; }
+
+.terms {
+  font-size: 12px;
+  color: #8a93a8;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.security-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 20px;
+}
+
+.pay-logos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pay-logos span {
+  border: 1px solid #e8edf5;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+}
+
+/* ── توست ── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #1a1a2e;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── موبايل ── */
+@media (max-width: 750px) {
+  .checkout-layout { flex-direction: column; }
+  .checkout-summary { width: 100%; position: static; }
+  .pay-options { flex-direction: column; }
+  .fields-row { flex-direction: column; }
+}
