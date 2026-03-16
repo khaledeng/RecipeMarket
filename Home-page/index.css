@@ -1,3 +1,6 @@
+
+
+
 /* navbar */
 
 * {
@@ -193,7 +196,9 @@ nav .row .col .user-icon i {
   background: #ff5a0e;
   color: white;
   border-radius: 25px;
-}/* categories section */
+}
+
+/* categories section */
 .categories {
   margin: 30px;
   background: white;

@@ -1,3 +1,5 @@
+
+
 // navbar
 var nav = document.querySelector("nav");
 document.addEventListener("scroll", function () {
@@ -49,6 +51,7 @@ function nextRecipe() {
 
   showRecipe(recipes[index]);
 }
+
 loadHero();
 
 //load categories
@@ -117,7 +120,6 @@ async function loadPopular() {
   });
 }
 loadPopular();
-
 var grid = document.getElementById("categoriesGrid");
 
 function scrollLeft(){
