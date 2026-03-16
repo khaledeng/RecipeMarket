@@ -11,7 +11,7 @@ body {
   direction: rtl;
 }
 
-/* ── هيدر (نفس بتاع باقي الصفحات) ── */
+/* ── هيدر ── */
 .topbar {
   display: flex;
   justify-content: space-between;
