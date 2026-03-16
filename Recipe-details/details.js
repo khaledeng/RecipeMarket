@@ -86,6 +86,9 @@ function addToCart(recipe) {
         window.location.href ="../Carts-pages/cart.html";
     };
 }
+var baseServing = 2;
+
+
 function displayRecipeDetails(recipe) {
     console.log(recipe)
     detailsRow.innerHTML = `
@@ -192,6 +195,28 @@ function displayRecipeDetails(recipe) {
 
     selectedIngredients = recipe.ingredients.map(ing => ({ ...ing, selected: true }));
 
+
+var servingBtns = document.querySelectorAll('.serving-btn');
+servingBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        servingBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        var serving = parseInt(this.textContent); 
+        var multiplier = serving / baseServing;    
+console.log(serving,multiplier)
+        selectedIngredients = recipe.ingredients.map((ing, i) => ({
+            ...ing,
+            quantity: ing.quantity * multiplier,
+            price: ing.price * multiplier,
+            selected: selectedIngredients[i].selected
+        }));
+
+        updateIngredientsUI();
+        calcTotal();
+    });
+});
+
     var checkInput = document.querySelectorAll('.checkInput')
     checkInput.forEach((checkbox, i) => {
         checkbox.addEventListener('change', function () {
@@ -205,3 +230,12 @@ function displayRecipeDetails(recipe) {
     });
 }
 
+function updateIngredientsUI() {
+    var labels = document.querySelectorAll('.ingredient');
+    selectedIngredients.forEach((ing, i) => {
+        labels[i].querySelector('.quantity').innerHTML = 
+            `${ing.quantity} ${unitMap[ing.unit]}`;
+        labels[i].querySelector('.price').innerHTML = 
+            `${ing.price} ر.س`;
+    });
+}
