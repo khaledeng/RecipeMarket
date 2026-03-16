@@ -21,7 +21,7 @@ The goal of this project is to simplify grocery shopping by allowing users to se
 ## Screenshots
 | Home | Categories | Recipes |
 |---|---|---|
-| ![](images/home.png) | ![](images/cats.png) | ![](images/Receipes.png) |
+| ![](images/home.png) | ![](images/cats.png) | ![](images/Recepies.png) |
 
 | Recipe Details | Cart | Order |
 |---|---|---|
