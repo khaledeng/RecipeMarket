@@ -118,7 +118,7 @@ function displayRecipeDetails(recipe) {
                     <div class="add-to-cart">
                         <div class="price">
                             <span>السعر الإجمالي</span>
-                            <p id="totalPrice">${recipe.price} ر.س</p>
+                            <p id="totalPrice">${recipe.ingredients.reduce((sum , ing) => sum + ing.price , 0)} ر.س</p>
                         </div>
                         <div class="add-btn">
                             <button id="addBtn"><i class="fa-solid fa-cart-arrow-down" ></i> أضف المكونات للسلة</button>
