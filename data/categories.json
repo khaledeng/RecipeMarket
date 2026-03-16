@@ -1,0 +1,12 @@
+{
+  "categories": [
+    {"id": 1, "name": "الفطار", "value": "breakfast", "icon": "🌅", "color": "#FFD93D", "description": "وصفات لذيذة لبدء يومك"},
+    {"id": 2, "name": "الغداء", "value": "lunch", "icon": "🍜", "color": "#FF6B6B", "description": "أكلات غداء شهية"},
+    {"id": 3, "name": "العشاء", "value": "dinner", "icon": "🍽️", "color": "#4ECDC4", "description": "وجبات عشاء فاخرة"},
+    {"id": 4, "name": "الحلويات", "value": "dessert", "icon": "🍰", "color": "#FF8C94", "description": "حلويات لذيذة"},
+    {"id": 5, "name": "المشروبات", "value": "drinks", "icon": "🥤", "color": "#C7CEEA", "description": "مشروبات منعشة"},
+    {"id": 6, "name": "السلطات", "value": "salads", "icon": "🥗", "color": "#95E1D3", "description": "سلطات صحية"},
+    {"id": 7, "name": "الحساء", "value": "soups", "icon": "🍲", "color": "#F8B195", "description": "شوربات دافئة"},
+    {"id": 8, "name": "اللحوم", "value": "meats", "icon": "🥩", "color": "#D4A574", "description": "وصفات لحم شهية"}
+  ]
+}

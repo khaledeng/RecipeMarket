@@ -1,0 +1,686 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body,
+html {
+    direction: rtl;
+    background-color: #F8F6F6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*********************************** NavBar ***********************************/
+nav {
+    border-bottom: 1px solid #F7E6DF;
+    padding: 20px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    transition: all 0.3s ease;
+
+}
+
+.scrolled-bg {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+nav .row,
+.col,
+.logo,
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+}
+
+nav .row .logo i {
+    color: white;
+    background-color: #EC5B13;
+    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .row .logo h1 {
+    color: #0F172A;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+nav .row .col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .row ul li {
+    padding: 0px 10px;
+    color: #0F172A;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav .row ul li:hover {
+    color: #EC5B13;
+}
+
+nav .row ul li .active {
+    color: #EC5B13;
+}
+
+nav .row .col .search {
+    position: relative;
+}
+
+nav .row .col .search i {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: #EC5B13;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+nav .row .col .search input {
+    padding: 8px 40px 8px 16px;
+    color: #0F172A;
+    background-color: RGBA(236, 91, 19, 0.05);
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+
+}
+
+nav .row .search input:focus {
+    border: 2px solid #F1A884;
+}
+
+
+nav .row .col .notification-icon i,
+.user-icon i {
+    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+nav .row .col .notification-icon i {
+    color: #EC5B13;
+    background-color: RGBA(236, 91, 19, 0.05);
+    transition: all 0.3s ease;
+}
+
+nav .row .col .notification-icon i:hover {
+    color: white;
+    background-color: #EC5B13;
+
+}
+
+nav .row .col .user-icon i {
+    color: white;
+    background-color: #EC5B13;
+    font-size: 14px;
+    box-shadow: 4px 4px 10px #F7E6DF;
+}
+
+/*********************************** Details ***********************************/
+
+/************************* Details Right Side ****************************/
+
+.details {
+    padding: 20px 0px;
+}
+
+.details .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.details .row .col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.details .recipe-nav {
+    color: #64748B;
+    font-size: 14px;
+    align-self: self-start;
+    margin-bottom: 10px;
+}
+
+.details .recipe-nav a {
+    transition: all 0.3s ease;
+}
+
+.details .recipe-nav a:hover {
+    color: #EC5B13;
+}
+
+.details .recipe-nav i {
+    padding: 0px 15px;
+    font-size: 12px;
+
+}
+
+.details .recipe-nav span {
+    color: #0F172A;
+    font-weight: 500;
+}
+
+.details .recipe-img {
+    margin-bottom: 16px;
+}
+
+.details .recipe-img img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.details .nutrition {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+}
+
+.details .nutrition .card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+}
+
+.details .nutrition .card p {
+    color: #64748B;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+
+.details .nutrition .card h3 {
+    color: #0F172A;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.details .add-to-cart {
+    background-color: RGBA(236, 91, 19, 0.05);
+    margin-top: 24px;
+    padding: 32px;
+    border: 1px solid #F6D1C0;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.details .add-to-cart .price {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details .add-to-cart .price span {
+    color: #475569;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.details .add-to-cart .price p {
+    color: #EC5B13;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 900;
+}
+
+.details .add-to-cart .add-btn button {
+    color: white;
+    background-color: #EC5B13;
+    width: 100%;
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 24px;
+    padding: 16px 0px;
+    font-weight: 700;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 8px 20px rgba(236, 91, 19, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.details .add-to-cart .add-btn button:hover {
+    background-color: RGBA(236, 91, 19, 0.9);
+}
+
+.details .add-to-cart .paragraph {
+    color: #64748B;
+    font-size: 12px;
+    margin-top: 24px;
+    line-height: 16px;
+    text-align: center;
+}
+
+/************************* Details Left Side ****************************/
+.details .left-side {
+    align-items: self-start;
+     flex: 1;
+    width: 0; 
+}
+
+.details .left-side {
+    padding-top: 40px;
+    text-align: right;
+
+}
+
+.details .category-rating .cat-title {
+    color: #EC5B13;
+    background-color: RGBA(236, 91, 19, 0.1);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+
+}
+
+.details .category-rating .rate {
+    color: #EAB308;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-right: 10px;
+}
+
+.details .category-rating i {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.details .category-rating .rate-number {
+    color: #94A3B8;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.details .title h2 {
+    color: #0F172A;
+    font-size: 48px;
+    font-weight: 900;
+    margin-top: 16px;
+    line-height: 48px;
+}
+
+.details .description p {
+    color: #475569;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 16px;
+    line-height: 29.25px;
+}
+
+.details .serving-size {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.details .serving-size h3 {
+    color: #0F172A;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 16px;
+}
+
+.details .serving-size h3 i {
+    color: #EC5B13;
+    font-size: 18px;
+}
+
+.details .serving-size .serving-options {
+    display: flex;
+    gap: 12px;
+}
+
+.details .serving-size .serving-options button {
+    color: #475569;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 24px;
+    font-weight: 700;
+    border: 2px solid #E2E8F0;
+    background-color: transparent;
+    border-radius: 25px;
+    flex: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.details .serving-size .serving-options button:hover {
+    border: 2px solid #F2A985;
+}
+
+.details .serving-size .serving-options button.active {
+    background-color: #EC5B13;
+    color: white;
+    border: none;
+
+}
+
+.details .ingredients {
+    width: 100%;
+    margin-top: 26px;
+
+}
+
+.details .ingredients .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.details .ingredients .title h3 {
+    color: #0F172A;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+.details .ingredients .title h3 i {
+    color: #EC5B13;
+    font-size: 20px;
+}
+
+.details .ingredients .title span {
+    color: #EC5B13;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.details .ingredients .ingredient-card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+
+}
+
+.details .ingredients .ingredient .check {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.details .ingredients .ingredient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 16px;
+    border-radius: 25px;
+    width: 48%;
+    border: 1px solid #E2E8F0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.details .ingredients .ingredient:hover {
+    border: 1px solid #F8C9B6;
+}
+
+.details .ingredients .ingredient input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #767D8A;
+    position: relative;
+}
+
+.details .ingredients .ingredient input[type="checkbox"]:checked {
+    background-color: #EC5B13;
+    border: 1px solid #EC5B13;
+}
+
+.details .ingredients .ingredient input[type="checkbox"]:checked::after {
+    position: absolute;
+    right: 2px;
+    content: "✔";
+    color: white;
+    font-size: 15px;
+}
+
+.details .ingredients .ingredient input[type="checkbox"]:checked+.ingredient-text p:first-child {
+    text-decoration: line-through;
+    opacity: 0.8;
+
+}
+
+.details .ingredients .ingredient .ingredient-text {
+    color: #94A3B8;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.details .ingredients .ingredient .ingredient-text .quantity {
+    color: #64748B;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.details .ingredients .ingredient .price {
+    color: #EC5B13;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.details .steps {
+    margin-top: 40px ;
+}
+
+.details .steps h3 {
+    color: #0F172A;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.details .steps h3 i {
+    color: #EC5B13;
+    font-size: 20px;
+}
+
+.details .steps .step {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    gap: 20px;
+
+}
+
+.details .steps .step .count .number {
+    background-color: #EC5B13;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details .steps .step .count .line {
+    background-color: #E2E8F0;
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 30px;
+    right: 12px;
+
+}
+.details .steps .step .step-text{
+    padding-bottom: 32px;
+}
+.details .steps .step .step-text h4{
+    color: #0F172A;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.details .steps .step .step-text p{
+    color: #475569;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+/************************* Dialog ****************************/
+dialog {
+     z-index: 99999; /* ✅ أكبر من الـ nav */
+    margin: auto;
+    border: none;
+    border-radius: 24px;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.15);
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform:scale(1);
+    }
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.dialog-icon i {
+    font-size: 60px;
+    color: #EC5B13;
+}
+
+dialog h3 {
+    color: #0F172A;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 16px 0px 8px;
+}
+
+dialog p {
+    color: #64748B;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.dialog-btns {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.dialog-btns button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+#goToCart {
+    background-color: #EC5B13;
+    color: white;
+    box-shadow: 0px 8px 20px rgba(236, 91, 19, 0.4);
+}
+
+#goToCart:hover {
+    background-color: rgba(236, 91, 19, 0.9);
+}
+
+#closeDialog {
+    background-color: rgba(236, 91, 19, 0.05);
+    color: #EC5B13;
+    border: 2px solid #F6D1C0 !important;
+}
+
+#closeDialog:hover {
+    background-color: rgba(236, 91, 19, 0.1);
+}

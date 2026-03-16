@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <!-- NavBar-start -->
+    <nav class="scrolled-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="logo">
+              <div class="logo-icon">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+              <h1>وصفاتي</h1>
+            </div>
+            <div class="nav-links">
+              <ul>
+                <li><a href="" class="active">الرئيسية</a></li>
+                <li><a href="">الوصفات</a></li>
+                <li><a href="">المفضلات</a></li>
+                <li><a href="">السلة</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="search">
+              <input
+                type="search"
+                name=""
+                id=""
+                placeholder="ابحث عن وصفة ..."
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="notification-icon">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="user-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- NavBar-end -->
+
+    <!-- hero -->
+    <section class="hero">
+      <img id="heroImg" />
+
+      <div class="hero-content">
+        <span class="badge">⭐ وصفة اليوم</span>
+
+        <h1 id="heroTitle"></h1>
+
+        <p id="heroDesc"></p>
+
+        <div class="hero-meta">
+          <span id="heroTime"></span>
+          <span id="heroServings"></span>
+          <span id="heroCalories"></span>
+        </div>
+
+        <button id="heroBtn">عرض الوصفة</button>
+      </div>
+    </section>
+    <!-- end hero -->
+
+    <!-- categories -->
+    <section class="categories">
+      <h2>التصنيفات</h2>
+
+      <div class="categories-grid" id="categoriesGrid"></div>
+    </section>
+
+    <section class="popular">
+      <h2>الوصفات المشهورة</h2>
+
+      <div class="popular-grid" id="popularGrid"></div>
+    </section>
+    <!-- end categories -->
+
+    <!-- subscribe section -->
+
+    <section class="subscribe">
+      <div class="subscribe-container">
+        <div class="image">
+          <img src="chef.png" />
+        </div>
+
+        <div class="content">
+          <h2>هل أنت جاهز للطهي؟</h2>
+
+          <p>
+            انضم إلى أكثر من 50 ألف من عشاق الطبخ واحصل على وصفات حصرية أسبوعياً
+            مباشرة إلى بريدك الإلكتروني.
+          </p>
+
+          <div class="form">
+            <button>اشتراك الآن</button>
+
+            <input type="email" placeholder="بريدك الإلكتروني" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end subscribe -->
+
+    <!-- footer -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col brand">
+          <h3>سفرة</h3>
+
+          <p>
+            منصتكم المفضلة لاكتشاف أشهى الوصفات العربية والعالمية نوفر لكم
+            المكونات الطازجة والخطوات البسيطة لكل وجبة.
+          </p>
+
+          <div class="social">
+            <span>○</span>
+            <span>○</span>
+            <span>○</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>روابط سريعة</h3>
+
+          <ul>
+            <li>عن سفرة</li>
+            <li>أحدث الوصفات</li>
+            <li>الطباخون المتميزون</li>
+            <li>انضم إلينا</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>الدعم والمساعدة</h3>
+
+          <ul>
+            <li>الأسئلة الشائعة</li>
+            <li>سياسة الخصوصية</li>
+            <li>شروط الاستخدام</li>
+            <li>اتصل بنا</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>تحميل التطبيق</h3>
+
+          <p>احصل على تجربة أفضل عبر تطبيقنا للهواتف الذكية.</p>
+
+          <div class="apps">
+            <div class="app-btn">App Store</div>
+
+            <div class="app-btn">Google Play</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">جميع الحقوق محفوظة © 2024 سفرة للوصفات والطبخ</div>
+    </footer>
+    <!-- end footer -->
+    <script src="./index.js"></script>
+  </body>
+</html>

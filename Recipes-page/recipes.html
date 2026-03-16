@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Recipes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body dir="rtl" lang="ar">
+
+<header class="topbar">
+
+  <div class="my-recipes">
+    <span class="recipes-icon">🍴</span>
+    <span class="recipes-text">وصفاتي</span>
+  </div>
+
+  <div class="topbar-right">
+    <a href="../Home-page/Index.html">الرئيسية</a>
+    <a href="../recipes.html" class="active">الوصفات</a>
+    <a href="../favorite.html">المفضلة</a>
+    <a href="../cart.html">السله</a>
+  </div>
+
+  <div class="top-search">
+    <input type="text" id="search" placeholder="ابحث عن وصفة أو مكون...">
+    <span class="search-icon">🔍</span>
+  </div>
+
+   <div class="topbar-left">
+    <button class="avatar-btn" aria-label="حساب المستخدم">👤</button>
+    <button class="notif-btn" aria-label="الإشعارات">🔔</button>
+  </div>
+ 
+</header>
+
+<div class="layout">
+
+<div class="sidebar">
+
+<h3>الفلاتر</h3>
+
+<div class="sidebar-actions">
+  <button id="clearFilters" class="clear-btn">مسح الكل</button>
+</div>
+
+<div class="filter-group">
+  <div class="filter-heading">نوع النظام الغذائي</div>
+  <label class="filter-item">
+    <input type="radio" name="mealType" value="" checked>
+    <span class="check"></span>
+    <span class="filter-icon">📦</span>
+    الكل
+  </label>
+  <label class="filter-item">
+    <input type="radio" name="mealType" value="Breakfast">
+    <span class="check"></span>
+    <span class="filter-icon">🔥</span>
+    وجبات سريعة
+  </label>
+  <label class="filter-item">
+    <input type="radio" name="mealType" value="Lunch">
+    <span class="check"></span>
+    <span class="filter-icon">🥗</span>
+    نباتي
+  </label>
+  <label class="filter-item">
+    <input type="radio" name="mealType" value="Dinner">
+    <span class="check"></span>
+    <span class="filter-icon">💪</span>
+    صحية
+  </label>
+</div>
+
+<div class="filter-group">
+  <div class="filter-heading">القيمة الغذائية</div>
+  <label class="filter-item">
+    <input type="radio" name="dietType" value="" checked>
+    <span class="check"></span>
+    <span class="filter-icon">📦</span>
+    الكل
+  </label>
+  <label class="filter-item">
+    <input type="radio" name="dietType" value="lowCarb">
+    <span class="check"></span>
+    <span class="filter-icon">⚡</span>
+    قليل الكربوهيدرات
+  </label>
+  <label class="filter-item">
+    <input type="radio" name="dietType" value="highProtein">
+    <span class="check"></span>
+    <span class="filter-icon">🔋</span>
+    عالي البروتين
+  </label>
+</div>
+
+<label class="filter-label">وقت التحضير (دقائق)</label>
+<input type="range" id="timeFilter" min="5" max="60" value="50">
+<div class="range-value"><span id="timeValue">60</span> دقيقة أو أقل</div>
+
+</div>
+
+<div class="content">
+  <div id="resultsCount"></div>
+  <div id="recipesContainer" class="recipes-container"></div>
+   <div class="pagination" id="pagination"></div>
+</div>
+
+</div>
+
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col brand">
+          <h3>سفرة</h3>
+
+          <p>
+            منصتكم المفضلة لاكتشاف أشهى الوصفات العربية والعالمية نوفر لكم
+            المكونات الطازجة والخطوات البسيطة لكل وجبة.
+          </p>
+
+          <div class="social">
+            <span>○</span>
+            <span>○</span>
+            <span>○</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>روابط سريعة</h3>
+
+          <ul>
+            <li>عن سفرة</li>
+            <li>أحدث الوصفات</li>
+            <li>الطباخون المتميزون</li>
+            <li>انضم إلينا</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>الدعم والمساعدة</h3>
+
+          <ul>
+            <li>الأسئلة الشائعة</li>
+            <li>سياسة الخصوصية</li>
+            <li>شروط الاستخدام</li>
+            <li>اتصل بنا</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>تحميل التطبيق</h3>
+
+          <p>احصل على تجربة أفضل عبر تطبيقنا للهواتف الذكية.</p>
+
+          <div class="apps">
+            <div class="app-btn">App Store</div>
+
+            <div class="app-btn">Google Play</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">جميع الحقوق محفوظة © 2024 سفرة للوصفات والطبخ</div>
+    </footer>
+
+<script src="recipes.js"></script>
+
+</body>
+</html>

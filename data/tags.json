@@ -1,0 +1,24 @@
+{
+  "tags": [
+    {"id": 1, "name": "سريعة", "value": "quick", "icon": "⚡", "color": "#FF6B6B"},
+    {"id": 2, "name": "صحية", "value": "healthy", "icon": "💪", "color": "#51CF66"},
+    {"id": 3, "name": "نباتية", "value": "vegetarian", "icon": "🥬", "color": "#69DB7C"},
+    {"id": 4, "name": "لحوم", "value": "meat", "icon": "🍖", "color": "#D4A574"},
+    {"id": 5, "name": "حار", "value": "spicy", "icon": "🌶️", "color": "#FF8C42"},
+    {"id": 6, "name": "رخيص", "value": "budget-friendly", "icon": "💰", "color": "#4ECDC4"},
+    {"id": 7, "name": "مكرونة", "value": "pasta", "icon": "🍝", "color": "#FFE66D"},
+    {"id": 8, "name": "سلطات", "value": "salad", "icon": "🥗", "color": "#95E1D3"},
+    {"id": 9, "name": "مشروبات", "value": "drink", "icon": "🥤", "color": "#C7CEEA"},
+    {"id": 10, "name": "بيتزا", "value": "pizza", "icon": "🍕", "color": "#FF6B9D"},
+    {"id": 11, "name": "شوربة", "value": "soup", "icon": "🍲", "color": "#F8B195"},
+    {"id": 12, "name": "حلويات", "value": "sweet", "icon": "🍪", "color": "#FFB6C1"},
+    {"id": 13, "name": "سمك", "value": "seafood", "icon": "🐟", "color": "#87CEEB"},
+    {"id": 14, "name": "دجاج", "value": "chicken", "icon": "🍗", "color": "#DEB887"},
+    {"id": 15, "name": "مصري", "value": "egyptian", "icon": "🇪🇬", "color": "#FF4444"},
+    {"id": 16, "name": "هندي", "value": "indian", "icon": "🌶️", "color": "#FF8C00"},
+    {"id": 17, "name": "إيطالي", "value": "italian", "icon": "🇮🇹", "color": "#228B22"},
+    {"id": 18, "name": "عشاء خاص", "value": "special", "icon": "✨", "color": "#FFD700"},
+    {"id": 19, "name": "للأطفال", "value": "kids", "icon": "👧", "color": "#FF69B4"},
+    {"id": 20, "name": "كلاسيكي", "value": "classic", "icon": "🏆", "color": "#8B4513"}
+  ]
+}
