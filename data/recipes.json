@@ -40,7 +40,13 @@
       "fat": 10,
       "description": "كشري مصري أصلي بالأرز والعدس والمكرونة - الأكلة الشعبية المصرية الشهيرة جداً",
       "instructions": ["اسلق الأرز والعدس بشكل منفصل", "اسلق المكرونة بماء مملح", "حمر البصل حتى يصير ذهبي اللون", "ضع الأرز والعدس والمكرونة في طبق", "أضف الصلصة والشطة والخل حسب الرغبة"],
-      "ingredients": [{"id": 5, "name": "أرز", "quantity": 150, "unit": "g", "price": 8}, {"id": 6, "name": "عدس أحمر", "quantity": 75, "unit": "g", "price": 5}]
+     "ingredients": [
+  {"id": 5, "name": "أرز", "quantity": 150, "unit": "g", "price": 8},
+  {"id": 6, "name": "عدس أحمر", "quantity": 75, "unit": "g", "price": 5},
+  {"id": 7, "name": "مكرونة", "quantity": 100, "unit": "g", "price": 4},
+  {"id": 8, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 3},
+  {"id": 9, "name": "صلصة طماطم", "quantity": 200, "unit": "ml", "price": 5}
+]
     },
     {
       "id": 3,
@@ -61,7 +67,12 @@
       "fat": 10,
       "description": "فلافل فلسطينية حقيقية مقلية بالحمص والتوابل - وصفة عربية عريقة جداً",
       "instructions": ["نقع الحمص طوال الليل", "اخلط مع البصل والتوابل", "شكل الكرات", "قلي الفلافل حتى تصير ذهبية"],
-      "ingredients": [{"id": 7, "name": "حمص مجفف", "quantity": 300, "unit": "g", "price": 18}]
+      "ingredients": [
+  {"id": 10, "name": "حمص مجفف", "quantity": 300, "unit": "g", "price": 18},
+  {"id": 11, "name": "بصل", "quantity": 1, "unit": "حبة", "price": 3},
+  {"id": 12, "name": "بقدونس", "quantity": 50, "unit": "g", "price": 4},
+  {"id": 13, "name": "ثوم", "quantity": 3, "unit": "حبة", "price": 3}
+]
     },
     {
       "id": 4,
@@ -82,7 +93,13 @@
       "fat": 10,
       "description": "حمص بالطحينة الفلسطينية - وصفة الشام الأصلية مع الثوم والليمون الطازة",
       "instructions": ["ضع الحمص في محضر الطعام", "أضف الطحينة وعصير الليمون", "أضف الثوم والملح", "اخلط جيداً حتى تحصل على قوام ناعم جداً"],
-      "ingredients": [{"id": 8, "name": "حمص مطبوخ", "quantity": 400, "unit": "g", "price": 12}]
+      "ingredients": [
+  {"id": 14, "name": "حمص مطبوخ", "quantity": 400, "unit": "g", "price": 12},
+  {"id": 15, "name": "طحينة", "quantity": 50, "unit": "g", "price": 8},
+  {"id": 16, "name": "ليمون", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 17, "name": "ثوم", "quantity": 2, "unit": "حبة", "price": 3},
+  {"id": 18, "name": "زيت زيتون", "quantity": 30, "unit": "ml", "price": 5}
+]
     },
     {
       "id": 5,
@@ -103,7 +120,13 @@
       "fat": 8,
       "description": "تبولة سورية طازة مع البقدونس والبرغل - وصفة شامية عريقة جداً",
       "instructions": ["انقع البرغل", "قطع الطماطم والبقدونس والنعناع", "اخلط المكونات", "أضف الزيت والليمون والملح"],
-      "ingredients": [{"id": 9, "name": "برغل", "quantity": 200, "unit": "g", "price": 15}]
+      "ingredients": [
+  {"id": 19, "name": "برغل", "quantity": 200, "unit": "g", "price": 15},
+  {"id": 20, "name": "بقدونس", "quantity": 100, "unit": "g", "price": 6},
+  {"id": 21, "name": "طماطم", "quantity": 3, "unit": "حبة", "price": 6},
+  {"id": 22, "name": "نعناع", "quantity": 30, "unit": "g", "price": 4},
+  {"id": 23, "name": "زيت زيتون", "quantity": 40, "unit": "ml", "price": 9}
+]
     },
     {
       "id": 6,
@@ -124,7 +147,13 @@
       "fat": 22,
       "description": "منسف أردني الأصلي مع لحم الضأن والزبادي - الطبق الوطني الأردني الفاخر",
       "instructions": ["سلق لحم الضأن بالماء والتوابل", "حضر صلصة الزبادي", "ضع الأرز والخبز في الطبق", "صب اللحم والصلصة فوقها", "رش الصنوبر والدهن"],
-      "ingredients": [{"id": 10, "name": "لحم ضأن", "quantity": 1000, "unit": "g", "price": 80}]
+      "ingredients": [
+  {"id": 24, "name": "لحم ضأن", "quantity": 1000, "unit": "g", "price": 80},
+  {"id": 25, "name": "أرز بسمتي", "quantity": 400, "unit": "g", "price": 20},
+  {"id": 26, "name": "زبادي", "quantity": 500, "unit": "ml", "price": 12},
+  {"id": 27, "name": "صنوبر", "quantity": 50, "unit": "g", "price": 15},
+  {"id": 28, "name": "خبز شراك", "quantity": 2, "unit": "حبة", "price": 4}
+]
     },
     {
       "id": 7,
@@ -145,7 +174,12 @@
       "fat": 10,
       "description": "بيتزا عراقية بالزعتر والجبن - الخبز المسطح العراقي الشهير جداً",
       "instructions": ["افرد العجينة رقيقة", "ضع الزعتر والزيت والجبن", "أدخل الفرن 15 دقيقة", "قدم ساخنة"],
-      "ingredients": [{"id": 11, "name": "عجينة عراقية", "quantity": 300, "unit": "g", "price": 20}]
+      "ingredients": [
+  {"id": 29, "name": "عجينة عراقية", "quantity": 300, "unit": "g", "price": 20},
+  {"id": 30, "name": "زعتر", "quantity": 50, "unit": "g", "price": 8},
+  {"id": 31, "name": "جبن أبيض", "quantity": 100, "unit": "g", "price": 12},
+  {"id": 32, "name": "زيت زيتون", "quantity": 30, "unit": "ml", "price": 5}
+]
     },
     {
       "id": 8,
@@ -166,7 +200,12 @@
       "fat": 6,
       "description": "ملوخية مصرية خضراء مع الثوم والكزبرة - أكلة مصرية فرعونية الأصل",
       "instructions": ["حمر الثوم والكزبرة", "أضف أوراق الملوخية المفرومة", "أضف المرق", "اطهها لمدة 20 دقيقة"],
-      "ingredients": [{"id": 12, "name": "أوراق ملوخية", "quantity": 500, "unit": "g", "price": 25}]
+      "ingredients": [
+  {"id": 33, "name": "أوراق ملوخية", "quantity": 500, "unit": "g", "price": 25},
+  {"id": 34, "name": "ثوم", "quantity": 4, "unit": "حبة", "price": 4},
+  {"id": 35, "name": "كزبرة", "quantity": 30, "unit": "g", "price": 4},
+  {"id": 36, "name": "مرق دجاج", "quantity": 500, "unit": "ml", "price": 9}
+]
     },
     {
       "id": 9,
@@ -187,7 +226,13 @@
       "fat": 16,
       "description": "شاورما لبنانية أصلية مع الدجاج والصلصة اللبنانية - الوصفة الشهيرة جداً",
       "instructions": ["تتبل الدجاج بالتوابل", "اشوِ الدجاج على النار", "قطع الدجاج رقيق", "ضع في خبز محمص مع الصلصة"],
-      "ingredients": [{"id": 13, "name": "دجاج", "quantity": 600, "unit": "g", "price": 30}]
+     "ingredients": [
+  {"id": 37, "name": "دجاج", "quantity": 600, "unit": "g", "price": 30},
+  {"id": 38, "name": "خبز عربي", "quantity": 4, "unit": "حبة", "price": 6},
+  {"id": 39, "name": "ثوم", "quantity": 3, "unit": "حبة", "price": 3},
+  {"id": 40, "name": "طحينة", "quantity": 50, "unit": "g", "price": 8},
+  {"id": 41, "name": "بهارات شاورما", "quantity": 20, "unit": "g", "price": 5}
+]
     },
     {
       "id": 10,
@@ -208,7 +253,11 @@
       "fat": 0,
       "description": "شاي بالنعناع المغربي الحلو والمنعش - المشروب المغربي الأساسي",
       "instructions": ["غلي الماء", "أضف النعناع والشاي", "اترك 5 دقائق", "صب السكر وقدم ساخناً"],
-      "ingredients": [{"id": 14, "name": "نعناع طازة", "quantity": 100, "unit": "g", "price": 10}]
+     "ingredients": [
+  {"id": 42, "name": "نعناع طازة", "quantity": 100, "unit": "g", "price": 10},
+  {"id": 43, "name": "شاي أخضر", "quantity": 10, "unit": "g", "price": 5},
+  {"id": 44, "name": "سكر", "quantity": 50, "unit": "g", "price": 3}
+]
     },
     {
       "id": 11,
@@ -229,7 +278,13 @@
       "fat": 14,
       "description": "كبسة سعودية أصلية مع الدجاج والرز الطويل - الطبق الشهير في السعودية",
       "instructions": ["سلق الدجاج مع التوابل", "قلي البصل والتوابل", "أضف الرز والمرق", "اترك يطهى في قدر مغطى"],
-      "ingredients": [{"id": 15, "name": "دجاج", "quantity": 800, "unit": "g", "price": 40}]
+      "ingredients": [
+  {"id": 45, "name": "دجاج", "quantity": 800, "unit": "g", "price": 40},
+  {"id": 46, "name": "أرز بسمتي", "quantity": 400, "unit": "g", "price": 20},
+  {"id": 47, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 48, "name": "طماطم", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 49, "name": "بهارات كبسة", "quantity": 20, "unit": "g", "price": 7}
+]
     },
     {
       "id": 12,
@@ -250,7 +305,12 @@
       "fat": 14,
       "description": "سمك مشوي على الفحم مع الليمون والتوابل المغربية - لذيذ جداً",
       "instructions": ["نظف السمك", "تتبل بالملح والليمون والتوابل", "اشوِ السمك على الفحم", "قدم مع الليمون الطازة"],
-      "ingredients": [{"id": 16, "name": "سمك طازة", "quantity": 800, "unit": "g", "price": 70}]
+      "ingredients": [
+  {"id": 50, "name": "سمك طازة", "quantity": 800, "unit": "g", "price": 70},
+  {"id": 51, "name": "ليمون", "quantity": 3, "unit": "حبة", "price": 6},
+  {"id": 52, "name": "ثوم", "quantity": 4, "unit": "حبة", "price": 4},
+  {"id": 53, "name": "كزبرة", "quantity": 30, "unit": "g", "price": 5}
+]
     },
     {
       "id": 13,
@@ -271,7 +331,13 @@
       "fat": 16,
       "description": "طاجين دجاج مع الزيتون والليمون - الطبق المغربي الأصيل الفاخر",
       "instructions": ["قطع الدجاج", "اطهي الدجاج مع الزيتون", "أضف الليمون والتوابل", "اترك يطهى في طاجين"],
-      "ingredients": [{"id": 17, "name": "دجاج", "quantity": 800, "unit": "g", "price": 40}]
+      "ingredients": [
+  {"id": 54, "name": "دجاج", "quantity": 800, "unit": "g", "price": 40},
+  {"id": 55, "name": "زيتون أخضر", "quantity": 100, "unit": "g", "price": 12},
+  {"id": 56, "name": "ليمون مخلل", "quantity": 2, "unit": "حبة", "price": 8},
+  {"id": 57, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 58, "name": "بهارات مغربية", "quantity": 20, "unit": "g", "price": 8}
+]
     },
     {
       "id": 14,
@@ -292,7 +358,12 @@
       "fat": 18,
       "description": "باستيلا تونسية بالدجاج والبيض والتمر - طبق عربي فاخر جداً",
       "instructions": ["حضر حشوة الدجاج والبيض", "ضع الحشوة في الجلاش", "اطوِ الجلاش", "قلي الباستيلا حتى تصير ذهبية"],
-      "ingredients": [{"id": 18, "name": "دجاج مفروم", "quantity": 500, "unit": "g", "price": 25}]
+      "ingredients": [
+  {"id": 59, "name": "دجاج مفروم", "quantity": 500, "unit": "g", "price": 25},
+  {"id": 60, "name": "جلاش", "quantity": 10, "unit": "حبة", "price": 10},
+  {"id": 61, "name": "بيض", "quantity": 3, "unit": "حبة", "price": 9},
+  {"id": 62, "name": "تمر", "quantity": 100, "unit": "g", "price": 14}
+]
     },
     {
       "id": 15,
@@ -313,7 +384,13 @@
       "fat": 14,
       "description": "فتة دجاج فلسطينية مع الزبادي والخبز المحمص - أكلة شعبية لذيذة",
       "instructions": ["سلق الدجاج", "محص الخبز", "صب الزبادي على الخبز", "أضف الدجاج فوقها"],
-      "ingredients": [{"id": 19, "name": "دجاج", "quantity": 600, "unit": "g", "price": 30}]
+      "ingredients": [
+  {"id": 63, "name": "دجاج", "quantity": 600, "unit": "g", "price": 30},
+  {"id": 64, "name": "خبز عربي", "quantity": 3, "unit": "حبة", "price": 6},
+  {"id": 65, "name": "زبادي", "quantity": 400, "unit": "ml", "price": 10},
+  {"id": 66, "name": "ثوم", "quantity": 3, "unit": "حبة", "price": 3},
+  {"id": 67, "name": "طحينة", "quantity": 50, "unit": "g", "price": 8}
+]
     },
     {
       "id": 16,
@@ -334,7 +411,13 @@
       "fat": 10,
       "description": "سلطة فاتوش لبنانية مع الخبز المحمص والدريسينج الشامي الأصلي",
       "instructions": ["قطع الخضار", "محص الخبز في المقلاة", "ضع الخضار والخبز", "صب الدريسينج فوقها"],
-      "ingredients": [{"id": 20, "name": "خضار مشكلة", "quantity": 400, "unit": "g", "price": 30}]
+      "ingredients": [
+  {"id": 68, "name": "خضار مشكلة", "quantity": 400, "unit": "g", "price": 30},
+  {"id": 69, "name": "خبز عربي", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 70, "name": "ليمون", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 71, "name": "زيت زيتون", "quantity": 40, "unit": "ml", "price": 8},
+  {"id": 72, "name": "دبس الرمان", "quantity": 30, "unit": "ml", "price": 7}
+]
     },
     {
       "id": 17,
@@ -355,7 +438,13 @@
       "fat": 20,
       "description": "كنافة بالقشدة والنوتيلا والقطر - الحلويات المصرية الفاخرة جداً",
       "instructions": ["فرد الكنافة في صينية مدهونة", "ضع القشدة على الكنافة", "أدخل الفرن 20 دقيقة", "صب القطر الساخن"],
-      "ingredients": [{"id": 21, "name": "كنافة", "quantity": 300, "unit": "g", "price": 25}]
+      "ingredients": [
+  {"id": 73, "name": "كنافة", "quantity": 300, "unit": "g", "price": 25},
+  {"id": 74, "name": "قشدة", "quantity": 200, "unit": "g", "price": 15},
+  {"id": 75, "name": "سمن", "quantity": 50, "unit": "g", "price": 10},
+  {"id": 76, "name": "قطر", "quantity": 150, "unit": "ml", "price": 8},
+  {"id": 77, "name": "فستق حلبي", "quantity": 30, "unit": "g", "price": 12}
+]
     },
     {
       "id": 18,
@@ -376,7 +465,13 @@
       "fat": 8,
       "description": "بسبوسة بجوز الهند وزيت السمسم - الحلويات المصرية التقليدية الشهيرة",
       "instructions": ["اخلط جوز الهند مع الدقيق والزيت", "ضع في صينية", "قطع المربعات", "ضع لوز في كل قطعة", "أدخل الفرن", "صب القطر"],
-      "ingredients": [{"id": 22, "name": "جوز هند", "quantity": 300, "unit": "g", "price": 20}]
+      "ingredients": [
+  {"id": 78, "name": "جوز هند", "quantity": 300, "unit": "g", "price": 20},
+  {"id": 79, "name": "سميد", "quantity": 200, "unit": "g", "price": 8},
+  {"id": 80, "name": "سكر", "quantity": 150, "unit": "g", "price": 5},
+  {"id": 81, "name": "زبدة", "quantity": 100, "unit": "g", "price": 10},
+  {"id": 82, "name": "قطر", "quantity": 150, "unit": "ml", "price": 8}
+]
     },
     {
       "id": 19,
@@ -397,7 +492,12 @@
       "fat": 9,
       "description": "حلويات التمر المحشية بالجوز - الحلويات الخليجية الأصلية الفاخرة",
       "instructions": ["انزع نوى التمر", "احشِ التمر بالجوز والفستق", "رتب في طبق التقديم"],
-      "ingredients": [{"id": 23, "name": "تمر فاخر", "quantity": 400, "unit": "g", "price": 35}]
+     "ingredients": [
+  {"id": 83, "name": "تمر فاخر", "quantity": 400, "unit": "g", "price": 35},
+  {"id": 84, "name": "جوز", "quantity": 100, "unit": "g", "price": 15},
+  {"id": 85, "name": "فستق", "quantity": 50, "unit": "g", "price": 12},
+  {"id": 86, "name": "لوز", "quantity": 50, "unit": "g", "price": 10}
+]
     },
     {
       "id": 20,
@@ -418,7 +518,13 @@
       "fat": 8,
       "description": "معمول بالتمر والفستق - الحلويات الشامية التقليدية الشهيرة جداً",
       "instructions": ["احشِ العجينة بالتمر", "ضع في قالب معمول", "أدخل الفرن", "صب السيروب الدافئ"],
-      "ingredients": [{"id": 24, "name": "دقيق معمول", "quantity": 300, "unit": "g", "price": 20}]
+      "ingredients": [
+  {"id": 87, "name": "دقيق معمول", "quantity": 300, "unit": "g", "price": 20},
+  {"id": 88, "name": "تمر", "quantity": 200, "unit": "g", "price": 18},
+  {"id": 89, "name": "سمن", "quantity": 100, "unit": "g", "price": 12},
+  {"id": 90, "name": "فستق", "quantity": 50, "unit": "g", "price": 12},
+  {"id": 91, "name": "سكر بودرة", "quantity": 50, "unit": "g", "price": 4}
+]
     },
     {
       "id": 21,
@@ -439,7 +545,13 @@
       "fat": 11,
       "description": "فلافل سعودية بالحمص الأبيض والبقدونس الطازة - لذيذة جداً",
       "instructions": ["نقع الحمص", "اخلط مع البقدونس والبصل", "شكل الكرات", "قلي الفلافل"],
-      "ingredients": [{"id": 25, "name": "حمص أبيض", "quantity": 300, "unit": "g", "price": 18}]
+      "ingredients": [
+  {"id": 92, "name": "حمص أبيض", "quantity": 300, "unit": "g", "price": 18},
+  {"id": 93, "name": "بقدونس", "quantity": 50, "unit": "g", "price": 4},
+  {"id": 94, "name": "بصل", "quantity": 1, "unit": "حبة", "price": 3},
+  {"id": 95, "name": "ثوم", "quantity": 3, "unit": "حبة", "price": 3},
+  {"id": 96, "name": "كمون", "quantity": 10, "unit": "g", "price": 3}
+]
     },
     {
       "id": 22,
@@ -460,7 +572,13 @@
       "fat": 14,
       "description": "أرز بالدجاج والتوابل الخليجية - طبق خليجي فاخر جداً",
       "instructions": ["طهي الدجاج مع التوابل", "أضف الأرز", "أضف المرق", "اترك يطهى"],
-      "ingredients": [{"id": 26, "name": "دجاج", "quantity": 700, "unit": "g", "price": 35}]
+     "ingredients": [
+  {"id": 97, "name": "دجاج", "quantity": 700, "unit": "g", "price": 35},
+  {"id": 98, "name": "أرز بسمتي", "quantity": 400, "unit": "g", "price": 20},
+  {"id": 99, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 100, "name": "بهارات خليجية", "quantity": 20, "unit": "g", "price": 7},
+  {"id": 101, "name": "زعفران", "quantity": 1, "unit": "g", "price": 10}
+]
     },
     {
       "id": 23,
@@ -481,7 +599,13 @@
       "fat": 10,
       "description": "فرموج العدس التونسي مع الحريسة والحبحب - وصفة تونسية تقليدية",
       "instructions": ["سلق العدس", "احشِ الفرموج", "قلي الفرموج", "قدم مع صلصة حارة"],
-      "ingredients": [{"id": 27, "name": "عدس", "quantity": 300, "unit": "g", "price": 18}]
+      "ingredients": [
+  {"id": 102, "name": "عدس", "quantity": 300, "unit": "g", "price": 18},
+  {"id": 103, "name": "بيض", "quantity": 4, "unit": "حبة", "price": 12},
+  {"id": 104, "name": "حريسة", "quantity": 30, "unit": "g", "price": 5},
+  {"id": 105, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 106, "name": "ثوم", "quantity": 2, "unit": "حبة", "price": 3}
+]
     },
     {
       "id": 24,
@@ -502,7 +626,13 @@
       "fat": 5,
       "description": "سلطة خضراء مصرية بسيطة مع الطماطم والخيار - طازة جداً",
       "instructions": ["قطع الخضار", "صب الزيت والخل", "تبل بالملح والفلفل"],
-      "ingredients": [{"id": 28, "name": "خضار مشكلة", "quantity": 400, "unit": "g", "price": 25}]
+     "ingredients": [
+  {"id": 107, "name": "خضار مشكلة", "quantity": 400, "unit": "g", "price": 25},
+  {"id": 108, "name": "طماطم", "quantity": 3, "unit": "حبة", "price": 6},
+  {"id": 109, "name": "خيار", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 110, "name": "ليمون", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 111, "name": "زيت زيتون", "quantity": 30, "unit": "ml", "price": 6}
+]
     },
     {
       "id": 25,
@@ -523,7 +653,13 @@
       "fat": 4,
       "description": "شوربة العدس الحمراء الشهية مع الليمون والتوابل - دافئة ولذيذة",
       "instructions": ["سلق العدس مع الخضار", "أضف التوابل", "اطهها حتى ينضج العدس", "اخلط أو اتركها بحبات"],
-      "ingredients": [{"id": 29, "name": "عدس أحمر", "quantity": 300, "unit": "g", "price": 18}]
+      "ingredients": [
+  {"id": 112, "name": "عدس أحمر", "quantity": 300, "unit": "g", "price": 18},
+  {"id": 113, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 114, "name": "ثوم", "quantity": 3, "unit": "حبة", "price": 3},
+  {"id": 115, "name": "ليمون", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 116, "name": "كمون", "quantity": 10, "unit": "g", "price": 3}
+]
     },
     {
       "id": 26,
@@ -544,7 +680,13 @@
       "fat": 16,
       "description": "سمك مقلي مصري مع الثوم والليمون الطازة - لذيذ جداً جداً",
       "instructions": ["نظف السمك", "تتبل بالملح والليمون", "قلي السمك في زيت ساخن", "قدم مع الليمون"],
-      "ingredients": [{"id": 30, "name": "سمك طازة", "quantity": 800, "unit": "g", "price": 60}]
+      "ingredients": [
+  {"id": 117, "name": "سمك طازة", "quantity": 800, "unit": "g", "price": 60},
+  {"id": 118, "name": "ثوم", "quantity": 4, "unit": "حبة", "price": 4},
+  {"id": 119, "name": "ليمون", "quantity": 3, "unit": "حبة", "price": 6},
+  {"id": 120, "name": "دقيق", "quantity": 100, "unit": "g", "price": 4},
+  {"id": 121, "name": "زيت للقلي", "quantity": 200, "unit": "ml", "price": 8}
+]
     },
     {
       "id": 27,
@@ -565,7 +707,13 @@
       "fat": 18,
       "description": "كفتة اللحم السورية مع البقدونس والبصل - أكلة شامية شهيرة جداً",
       "instructions": ["فرم اللحم", "أضف البقدونس والبصل والتوابل", "شكل الكفات", "اشوِ الكفات على النار"],
-      "ingredients": [{"id": 31, "name": "لحم مفروم", "quantity": 700, "unit": "g", "price": 50}]
+      "ingredients": [
+  {"id": 122, "name": "لحم مفروم", "quantity": 700, "unit": "g", "price": 50},
+  {"id": 123, "name": "بقدونس", "quantity": 50, "unit": "g", "price": 4},
+  {"id": 124, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 125, "name": "بهارات كفتة", "quantity": 20, "unit": "g", "price": 5},
+  {"id": 126, "name": "ملح وفلفل", "quantity": 10, "unit": "g", "price": 2}
+]
     },
     {
       "id": 28,
@@ -586,7 +734,13 @@
       "fat": 16,
       "description": "بيض مقلي بالطماطم والفلفل الأخضر - فطار عربي تقليدي شهير",
       "instructions": ["حمس الطماطم والفلفل", "أكسر البيض فوقها", "اطهها حتى ينضج البيض", "قدم ساخناً"],
-      "ingredients": [{"id": 32, "name": "بيض", "quantity": 4, "unit": "حبة", "price": 16}]
+     "ingredients": [
+  {"id": 127, "name": "بيض", "quantity": 4, "unit": "حبة", "price": 16},
+  {"id": 128, "name": "طماطم", "quantity": 3, "unit": "حبة", "price": 6},
+  {"id": 129, "name": "فلفل أخضر", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 130, "name": "بصل", "quantity": 1, "unit": "حبة", "price": 3},
+  {"id": 131, "name": "زيت", "quantity": 30, "unit": "ml", "price": 4}
+]
     },
     {
       "id": 29,
@@ -607,7 +761,13 @@
       "fat": 10,
       "description": "جريش عربي مع اللحم والتوابل - وصفة عربية شهيرة جداً",
       "instructions": ["سلق الجريش مع المرق", "أضف اللحم والتوابل", "اترك يطهى حتى ينضج الجريش"],
-      "ingredients": [{"id": 33, "name": "جريش", "quantity": 300, "unit": "g", "price": 20}]
+      "ingredients": [
+  {"id": 132, "name": "جريش", "quantity": 300, "unit": "g", "price": 20},
+  {"id": 133, "name": "لحم ضأن", "quantity": 300, "unit": "g", "price": 30},
+  {"id": 134, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 135, "name": "بهارات", "quantity": 15, "unit": "g", "price": 5},
+  {"id": 136, "name": "سمن", "quantity": 50, "unit": "g", "price": 8}
+]
     },
     {
       "id": 30,
@@ -628,7 +788,13 @@
       "fat": 14,
       "description": "مقلوبة فلسطينية مع الدجاج والأرز والباذنجان - وصفة فلسطينية فاخرة",
       "instructions": ["قلي الباذنجان والبصل", "ضع الأرز والدجاج", "صب المرق", "اترك يطهى ثم اقلبها"],
-      "ingredients": [{"id": 34, "name": "دجاج", "quantity": 600, "unit": "g", "price": 30}]
+      "ingredients": [
+  {"id": 137, "name": "دجاج", "quantity": 600, "unit": "g", "price": 30},
+  {"id": 138, "name": "أرز", "quantity": 400, "unit": "g", "price": 16},
+  {"id": 139, "name": "باذنجان", "quantity": 2, "unit": "حبة", "price": 8},
+  {"id": 140, "name": "بصل", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 141, "name": "بهارات مقلوبة", "quantity": 20, "unit": "g", "price": 6}
+]
     },
 {
 "id":31,
@@ -649,7 +815,13 @@
 "fat":20,
 "description":"مكرونة بالبشاميل باللحم المفروم - من أشهر الأكلات المصرية",
 "instructions":["اسلق المكرونة","حضر صلصة اللحم","حضر البشاميل","ضع طبقات المكرونة واللحم والبشاميل","اخبز في الفرن"],
-"ingredients":[{"id":35,"name":"مكرونة","quantity":500,"unit":"g","price":20}]
+"ingredients": [
+  {"id": 142, "name": "مكرونة", "quantity": 500, "unit": "g", "price": 20},
+  {"id": 143, "name": "لحم مفروم", "quantity": 400, "unit": "g", "price": 30},
+  {"id": 144, "name": "حليب", "quantity": 500, "unit": "ml", "price": 10},
+  {"id": 145, "name": "زبدة", "quantity": 100, "unit": "g", "price": 10},
+  {"id": 146, "name": "جبن رومي", "quantity": 100, "unit": "g", "price": 15}
+]
 },
 {
 "id":32,
@@ -670,7 +842,13 @@
 "fat":6,
 "description":"شوربة دجاج دافئة مع الخضار",
 "instructions":["سلق الدجاج","أضف الخضار","اتركها تغلي"],
-"ingredients":[{"id":36,"name":"دجاج","quantity":400,"unit":"g","price":25}]
+"ingredients": [
+  {"id": 147, "name": "دجاج", "quantity": 400, "unit": "g", "price": 25},
+  {"id": 148, "name": "جزر", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 149, "name": "كرفس", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 150, "name": "بصل", "quantity": 1, "unit": "حبة", "price": 3},
+  {"id": 151, "name": "شعرية", "quantity": 100, "unit": "g", "price": 5}
+]
 },
 {
 "id":33,
@@ -691,7 +869,13 @@
 "fat":26,
 "description":"برجر لحم مشوي مع الجبن",
 "instructions":["شكل اللحم","اشوِ البرجر","ضع في الخبز مع الخضار"],
-"ingredients":[{"id":37,"name":"لحم مفروم","quantity":400,"unit":"g","price":35}]
+"ingredients": [
+  {"id": 152, "name": "لحم مفروم", "quantity": 400, "unit": "g", "price": 35},
+  {"id": 153, "name": "خبز برجر", "quantity": 2, "unit": "حبة", "price": 8},
+  {"id": 154, "name": "جبن شيدر", "quantity": 60, "unit": "g", "price": 10},
+  {"id": 155, "name": "خس وطماطم", "quantity": 100, "unit": "g", "price": 6},
+  {"id": 156, "name": "صوص برجر", "quantity": 30, "unit": "ml", "price": 5}
+]
 },
 {
 "id":34,
@@ -712,7 +896,13 @@
 "fat":16,
 "description":"بيتزا إيطالية بجبنة الموزاريلا والطماطم",
 "instructions":["افرد العجينة","أضف الصلصة والجبن","اخبز في الفرن"],
-"ingredients":[{"id":38,"name":"جبن موزاريلا","quantity":200,"unit":"g","price":30}]
+"ingredients": [
+  {"id": 157, "name": "جبن موزاريلا", "quantity": 200, "unit": "g", "price": 30},
+  {"id": 158, "name": "عجينة بيتزا", "quantity": 300, "unit": "g", "price": 15},
+  {"id": 159, "name": "صلصة طماطم", "quantity": 150, "unit": "ml", "price": 8},
+  {"id": 160, "name": "ريحان طازة", "quantity": 20, "unit": "g", "price": 5},
+  {"id": 161, "name": "زيت زيتون", "quantity": 30, "unit": "ml", "price": 5}
+]
 },
 {
 "id":35,
@@ -733,7 +923,13 @@
 "fat":6,
 "description":"أرز بالخضار الطازة",
 "instructions":["قلي الخضار","أضف الأرز والماء","اتركه حتى ينضج"],
-"ingredients":[{"id":39,"name":"أرز","quantity":300,"unit":"g","price":15}]
+"ingredients": [
+  {"id": 162, "name": "أرز", "quantity": 300, "unit": "g", "price": 15},
+  {"id": 163, "name": "جزر", "quantity": 2, "unit": "حبة", "price": 4},
+  {"id": 164, "name": "بازلاء", "quantity": 100, "unit": "g", "price": 6},
+  {"id": 165, "name": "فلفل ألوان", "quantity": 1, "unit": "حبة", "price": 5},
+  {"id": 166, "name": "زيت", "quantity": 30, "unit": "ml", "price": 4}
+]
 },
 {
 "id":36,
@@ -754,7 +950,13 @@
 "fat":8,
 "description":"بان كيك طري بالعسل",
 "instructions":["اخلط المكونات","اطه في مقلاة","قدم مع العسل"],
-"ingredients":[{"id":40,"name":"دقيق","quantity":200,"unit":"g","price":10}]
+"ingredients": [
+  {"id": 167, "name": "دقيق", "quantity": 200, "unit": "g", "price": 10},
+  {"id": 168, "name": "بيض", "quantity": 2, "unit": "حبة", "price": 8},
+  {"id": 169, "name": "حليب", "quantity": 200, "unit": "ml", "price": 6},
+  {"id": 170, "name": "عسل", "quantity": 50, "unit": "ml", "price": 12},
+  {"id": 171, "name": "زبدة", "quantity": 30, "unit": "g", "price": 5}
+]
 },
 {
 "id":37,
@@ -775,7 +977,12 @@
 "fat":0,
 "description":"عصير برتقال طبيعي",
 "instructions":["اعصر البرتقال","قدم بارداً"],
-"ingredients":[{"id":41,"name":"برتقال","quantity":4,"unit":"حبة","price":12}]
+"ingredients": [
+  {"id": 172, "name": "برتقال", "quantity": 4, "unit": "حبة", "price": 12},
+  {"id": 173, "name": "سكر", "quantity": 30, "unit": "g", "price": 3},
+  {"id": 174, "name": "ماء", "quantity": 100, "unit": "ml", "price": 0},
+  {"id": 175, "name": "نعناع", "quantity": 10, "unit": "g", "price": 3}
+]
 },
 {
 "id":38,
@@ -796,7 +1003,13 @@
 "fat":26,
 "description":"تشيز كيك كريمي لذيذ",
 "instructions":["حضر القاعدة","أضف الكريمة","اخبز"],
-"ingredients":[{"id":42,"name":"جبن كريمي","quantity":300,"unit":"g","price":40}]
+"ingredients": [
+  {"id": 176, "name": "جبن كريمي", "quantity": 300, "unit": "g", "price": 40},
+  {"id": 177, "name": "بسكويت", "quantity": 200, "unit": "g", "price": 12},
+  {"id": 178, "name": "زبدة", "quantity": 100, "unit": "g", "price": 10},
+  {"id": 179, "name": "سكر", "quantity": 100, "unit": "g", "price": 5},
+  {"id": 180, "name": "كريمة", "quantity": 200, "unit": "ml", "price": 15}
+]
 },
 {
 "id":39,
@@ -817,7 +1030,13 @@
 "fat":28,
 "description":"دجاج مقلي مقرمش",
 "instructions":["تتبيل الدجاج","غمس في الدقيق","قلي"],
-"ingredients":[{"id":43,"name":"دجاج","quantity":800,"unit":"g","price":45}]
+"ingredients": [
+  {"id": 181, "name": "دجاج", "quantity": 800, "unit": "g", "price": 45},
+  {"id": 182, "name": "دقيق", "quantity": 200, "unit": "g", "price": 8},
+  {"id": 183, "name": "بيض", "quantity": 2, "unit": "حبة", "price": 8},
+  {"id": 184, "name": "بهارات قلي", "quantity": 20, "unit": "g", "price": 6},
+  {"id": 185, "name": "زيت للقلي", "quantity": 300, "unit": "ml", "price": 10}
+]
 },
 {
 "id":40,
@@ -838,7 +1057,13 @@
 "fat":12,
 "description":"سلطة سيزر بالدجاج",
 "instructions":["قطع الخضار","أضف الصوص"],
-"ingredients":[{"id":44,"name":"خس","quantity":200,"unit":"g","price":10}]
+"ingredients": [
+  {"id": 186, "name": "خس", "quantity": 200, "unit": "g", "price": 10},
+  {"id": 187, "name": "دجاج مشوي", "quantity": 200, "unit": "g", "price": 20},
+  {"id": 188, "name": "جبن بارميزان", "quantity": 50, "unit": "g", "price": 15},
+  {"id": 189, "name": "خبز محمص", "quantity": 50, "unit": "g", "price": 4},
+  {"id": 190, "name": "صوص سيزر", "quantity": 50, "unit": "ml", "price": 10}
+]
 }
   ]
 }

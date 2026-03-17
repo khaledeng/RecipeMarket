@@ -1,6 +1,7 @@
 var detailsRow = document.getElementById("detailsRow");
 var nav = document.querySelector('nav');
 var selectedIngredients = [];
+var allRecipes = []; 
 
 var categoryMap = {
     "breakfast": "الفطار",
@@ -28,7 +29,7 @@ var id = params.get('id');
 document.addEventListener('scroll', function () {
     if (window.scrollY > 10) {
         nav.classList.add('scrolled-bg');
-        nav.style.backgroundColor = "rgba(255, 255, 255, 0.7)"
+        nav.style.backgroundColor = "hsla(0, 0%, 100%, 0.70)"
 
     }
     else {
@@ -44,8 +45,10 @@ xhr.send();
 xhr.responseType = "json";
 xhr.onload = function () {
     var recipes = xhr.response.recipes;
+    allRecipes = recipes;
     var recipe = recipes.find(r => r.id == id);
     displayRecipeDetails(recipe);
+     displaySuggestions(recipe);
 }
 
 
@@ -159,7 +162,7 @@ function displayRecipeDetails(recipe) {
                     <div class="ingredients">
                         <div class="title">
                             <h3><i class="fa-solid fa-box-archive"></i> المكونات المطلوبة</h3>
-                            <span>تحديد الكل</span>
+                            
                         </div>
                         <div class="ingredient-card">
                         ${recipe.ingredients.map(ingredient => `<label class="ingredient">
@@ -238,4 +241,71 @@ function updateIngredientsUI() {
         labels[i].querySelector('.price').innerHTML = 
             `${ing.price} ر.س`;
     });
+}
+
+function displaySuggestions(recipe) {
+    var suggestions = allRecipes.filter(re =>
+        re.category === recipe.category && re.id != recipe.id
+    );
+
+    var section = document.getElementById('suggestionsSection');
+
+    if (suggestions.length === 0) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.innerHTML = `
+        <h3><i class="fa-solid fa-fire"></i> وصفات مشابهة</h3>
+        <div class="suggestions-wrapper">
+            <button class="slider-btn prev-btn">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="suggestions-grid" id="suggestionsGrid">
+                ${suggestions.map(re => `
+                    <div class="suggestion-card" onclick="changRecipe(${re.id})">
+                        <div class="suggestion-img">
+                            <img src="${re.image}" alt="${re.name}">
+                        </div>
+                        <div class="suggestion-info">
+                            <h4>${re.name}</h4>
+                            <div class="suggestion-meta">
+                                <span class="suggestion-rate">
+                                    <i class="fa-regular fa-star"></i> ${re.rating}
+                                </span>
+                                <span class="suggestion-price">${re.price} ر.س</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+
+            <button class="slider-btn next-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+        </div>
+    `;
+
+    var grid = document.getElementById('suggestionsGrid');
+    var cardWidth = grid.querySelector('.suggestion-card').offsetWidth + 20;
+
+    document.querySelector('.prev-btn').addEventListener('click', function () {
+        grid.scrollLeft -= cardWidth;
+    });
+
+    document.querySelector('.next-btn').addEventListener('click', function () {
+        grid.scrollLeft += cardWidth;
+    });
+}
+
+function changRecipe(newId) {
+    window.history.pushState({}, '', `?id=${newId}`);
+    id = newId;
+
+    var recipe = allRecipes.find(r => r.id == newId);
+    displayRecipeDetails(recipe);
+    displaySuggestions(recipe); 
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -764,3 +764,130 @@ dialog p {
 #closeDialog:hover {
     background-color: rgba(236, 91, 19, 0.1);
 }
+
+.suggestions-section {
+    margin-top: 60px;
+    padding-bottom: 40px;
+    overflow: hidden; 
+}
+
+.suggestions-section h3 {
+    color: #0F172A;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.suggestions-section h3 i {
+    color: #EC5B13;
+    margin-left: 8px;
+}
+
+.suggestions-wrapper {
+    position: relative;
+}
+
+.suggestions-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+}
+
+.suggestion-card {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #E2E8F0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: calc(25% - 15px); 
+    flex-shrink: 0;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: #F2A985;
+}
+
+.suggestion-img {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+}
+
+.suggestion-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.suggestion-card:hover .suggestion-img img {
+    transform: scale(1.05);
+}
+
+.suggestion-info {
+    padding: 14px;
+}
+
+.suggestion-info h4 {
+    color: #0F172A;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.suggestion-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggestion-rate {
+    color: #EAB308;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.suggestion-price {
+    color: #EC5B13;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.suggestions-wrapper .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    color: #EC5B13;
+    font-size: 14px;
+}
+
+.suggestions-wrapper .slider-btn:hover {
+    background-color: #EC5B13;
+    color: white;
+    border-color: #EC5B13;
+}
+
+.suggestions-wrapper .prev-btn {
+    right: -16px; 
+}
+
+.suggestions-wrapper .next-btn {
+    left: -16px;
+}
