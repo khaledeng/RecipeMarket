@@ -146,5 +146,19 @@ function toast(msg) {
   setTimeout(function() { el.classList.remove("show"); }, 2000);
 }
 
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.length;
+  
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.textContent = count;
+}
+
+// استدعيها في أول تشغيل الصفحة
+updateCartBadge();
+
+
+
+
 // ── تشغيل ──
 render();
