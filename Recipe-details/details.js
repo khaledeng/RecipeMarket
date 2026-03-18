@@ -1,6 +1,7 @@
 var detailsRow = document.getElementById("detailsRow");
 var nav = document.querySelector('nav');
 var selectedIngredients = [];
+var allRecipes = []; 
 
 var categoryMap = {
     "breakfast": "الفطار",
@@ -28,7 +29,7 @@ var id = params.get('id');
 document.addEventListener('scroll', function () {
     if (window.scrollY > 10) {
         nav.classList.add('scrolled-bg');
-        nav.style.backgroundColor = "rgba(255, 255, 255, 0.7)"
+        nav.style.backgroundColor = "hsla(0, 0%, 100%, 0.70)"
 
     }
     else {
@@ -44,8 +45,10 @@ xhr.send();
 xhr.responseType = "json";
 xhr.onload = function () {
     var recipes = xhr.response.recipes;
+    allRecipes = recipes;
     var recipe = recipes.find(r => r.id == id);
     displayRecipeDetails(recipe);
+     displaySuggestions(recipe);
 }
 
 
@@ -83,9 +86,12 @@ function addToCart(recipe) {
     };
 
     document.getElementById('goToCart').onclick = function () {
-        window.location.href = '../Cart-page/cart.html';
+        window.location.href ="../Carts-pages/cart.html";
     };
 }
+var baseServing = 2;
+
+
 function displayRecipeDetails(recipe) {
     console.log(recipe)
     detailsRow.innerHTML = `
@@ -118,7 +124,7 @@ function displayRecipeDetails(recipe) {
                     <div class="add-to-cart">
                         <div class="price">
                             <span>السعر الإجمالي</span>
-                            <p id="totalPrice">${recipe.price} ر.س</p>
+                            <p id="totalPrice">${recipe.ingredients.reduce((sum , ing) => sum + ing.price , 0)} ر.س</p>
                         </div>
                         <div class="add-btn">
                             <button id="addBtn"><i class="fa-solid fa-cart-arrow-down" ></i> أضف المكونات للسلة</button>
@@ -156,7 +162,7 @@ function displayRecipeDetails(recipe) {
                     <div class="ingredients">
                         <div class="title">
                             <h3><i class="fa-solid fa-box-archive"></i> المكونات المطلوبة</h3>
-                            <span>تحديد الكل</span>
+                            
                         </div>
                         <div class="ingredient-card">
                         ${recipe.ingredients.map(ingredient => `<label class="ingredient">
@@ -192,6 +198,28 @@ function displayRecipeDetails(recipe) {
 
     selectedIngredients = recipe.ingredients.map(ing => ({ ...ing, selected: true }));
 
+
+var servingBtns = document.querySelectorAll('.serving-btn');
+servingBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        servingBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        var serving = parseInt(this.textContent); 
+        var multiplier = serving / baseServing;    
+console.log(serving,multiplier)
+        selectedIngredients = recipe.ingredients.map((ing, i) => ({
+            ...ing,
+            quantity: ing.quantity * multiplier,
+            price: ing.price * multiplier,
+            selected: selectedIngredients[i].selected
+        }));
+
+        updateIngredientsUI();
+        calcTotal();
+    });
+});
+
     var checkInput = document.querySelectorAll('.checkInput')
     checkInput.forEach((checkbox, i) => {
         checkbox.addEventListener('change', function () {
@@ -205,3 +233,79 @@ function displayRecipeDetails(recipe) {
     });
 }
 
+function updateIngredientsUI() {
+    var labels = document.querySelectorAll('.ingredient');
+    selectedIngredients.forEach((ing, i) => {
+        labels[i].querySelector('.quantity').innerHTML = 
+            `${ing.quantity} ${unitMap[ing.unit]}`;
+        labels[i].querySelector('.price').innerHTML = 
+            `${ing.price} ر.س`;
+    });
+}
+
+function displaySuggestions(recipe) {
+    var suggestions = allRecipes.filter(re =>
+        re.category === recipe.category && re.id != recipe.id
+    );
+
+    var section = document.getElementById('suggestionsSection');
+
+    if (suggestions.length === 0) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.innerHTML = `
+        <h3><i class="fa-solid fa-fire"></i> وصفات مشابهة</h3>
+        <div class="suggestions-wrapper">
+            <button class="slider-btn prev-btn">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="suggestions-grid" id="suggestionsGrid">
+                ${suggestions.map(re => `
+                    <div class="suggestion-card" onclick="changRecipe(${re.id})">
+                        <div class="suggestion-img">
+                            <img src="${re.image}" alt="${re.name}">
+                        </div>
+                        <div class="suggestion-info">
+                            <h4>${re.name}</h4>
+                            <div class="suggestion-meta">
+                                <span class="suggestion-rate">
+                                    <i class="fa-regular fa-star"></i> ${re.rating}
+                                </span>
+                                <span class="suggestion-price">${re.price} ر.س</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+
+            <button class="slider-btn next-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+        </div>
+    `;
+
+    var grid = document.getElementById('suggestionsGrid');
+    var cardWidth = grid.querySelector('.suggestion-card').offsetWidth + 20;
+
+    document.querySelector('.prev-btn').addEventListener('click', function () {
+        grid.scrollLeft -= cardWidth;
+    });
+
+    document.querySelector('.next-btn').addEventListener('click', function () {
+        grid.scrollLeft += cardWidth;
+    });
+}
+
+function changRecipe(newId) {
+    window.history.pushState({}, '', `?id=${newId}`);
+    id = newId;
+
+    var recipe = allRecipes.find(r => r.id == newId);
+    displayRecipeDetails(recipe);
+    displaySuggestions(recipe); 
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}

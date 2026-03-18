@@ -18,6 +18,15 @@ The goal of this project is to simplify grocery shopping by allowing users to se
 * Save favorite recipes
 * Cart persistence using LocalStorage
 
+## Screenshots
+| Home | Categories | Recipes |
+|---|---|---|
+| ![](images/home.png) | ![](images/cats.png) | ![](images/Recepies.png) |
+
+| Recipe Details | Cart | Order |
+|---|---|---|
+| ![](images/receipeDetails.png) | ![](images/cart.png) | ![](images/Order.png) |
+---
 ## Pages
 
 Home

@@ -49,6 +49,7 @@ function nextRecipe() {
 
   showRecipe(recipes[index]);
 }
+
 loadHero();
 
 //load categories
@@ -117,3 +118,20 @@ async function loadPopular() {
   });
 }
 loadPopular();
+
+
+var grid = document.getElementById("categoriesGrid");
+
+function scrollLeft(){
+  grid.scrollBy({
+    left: -300,
+    behavior: "smooth"
+  });
+}
+
+function scrollRight(){
+  grid.scrollBy({
+    left: 300,
+    behavior: "smooth"
+  });
+}

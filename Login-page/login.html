@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fa-solid fa-utensils"></i>
+            <span>سفرة</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">العروض</a></li>
+            <li><a href="#">من نحن</a></li>
+        </ul>
+
+        <button class="signup-btn">إنشاء حساب</button>
+    </nav>
+    <section class="login">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800" alt="pancakes">
+                    <div class="slide-text">
+                        <h3>وصفات شهية لكل يوم</h3>
+                        <p>اكتشف أشهى الأطباق من مطابخ العالم</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800" alt="food">
+                    <div class="slide-text">
+                        <h3>مكونات طازجة بين يديك</h3>
+                        <p>اطلب مكونات وصفتك وتوصل لبابك</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800" alt="salad">
+                    <div class="slide-text">
+                        <h3>أكل صحي وطعم رائع</h3>
+                        <p>تغذية متوازنة مع وصفات صحية مختارة</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800" alt="pizza">
+                    <div class="slide-text">
+                        <h3>لكل مناسبة وصفة مميزة</h3>
+                        <p>من الفطار للعشاء، سفرة معك دايماً</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="login-container">
+
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="login-title">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        <h2>تسجيل الدخول</h2>
+                    </div>
+                    <p>مرحباً بك مجدداً! سجل دخولك للتمتع بأشهى المأكولات</p>
+                </div>
+
+                <div class="userName">
+                    <label for="username">البريد الإلكتروني أو اسم المستخدم </label>
+                    <input id="username" type="text" placeholder="example@mail.com">
+                    <div class="user-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+                <div class="password">
+                    <div class="password-row">
+                        <label for="password">كلمة المرور</label>
+                        <a href="#">نسيت كلمة المرور؟</a>
+                    </div>
+                    <input id="password" type="password" placeholder="***********">
+                    <div class="password-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                </div>
+                <button id="loginBtn" class="login-btn">
+                    تسجيل الدخول
+                </button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-links">
+            <a href="#">الشروط والأحكام</a>
+            <a href="#">سياسة الخصوصية</a>
+            <a href="#">اتصل بنا</a>
+        </div>
+        <p class="footer-copy">© 2024 سفرة. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <dialog id="errorDialog">
+        <div class="dialog-content">
+            <div class="dialog-icon">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+            <h3>خطأ في تسجيل الدخول</h3>
+            <p>اسم المستخدم أو كلمة المرور غير صحيحة</p>
+            <button id="closeError">حسناً</button>
+        </div>
+    </dialog>
+
+    <script src="./login.js"></script>
+
+</body>
+
+</html>
