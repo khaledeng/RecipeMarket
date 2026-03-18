@@ -124,6 +124,25 @@ body{
   border-color:#ff6200;
   box-shadow:0 4px 15px rgba(255,98,0,0.2);
 }
+.cart-link {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  background: #ff6200;
+  color: white;
+  font-size: 11px;
+  font-weight: 900;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .topbar-right a::before{
   content:"";

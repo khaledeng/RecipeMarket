@@ -41,6 +41,7 @@ xhr.onload = function(){
 
 recipes = xhr.response.recipes;
 filteredRecipes = recipes;
+    updateCartBadge(); 
 
 showPage();
 
@@ -362,6 +363,14 @@ window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+}
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.length;
+  
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.textContent = count;
 }
 
 pagination.addEventListener("click",scrollTopPage);

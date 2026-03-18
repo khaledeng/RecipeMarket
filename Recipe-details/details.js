@@ -49,6 +49,8 @@ xhr.onload = function () {
     var recipe = recipes.find(r => r.id == id);
     displayRecipeDetails(recipe);
      displaySuggestions(recipe);
+         updateCartBadge(); 
+
 }
 
 
@@ -76,6 +78,7 @@ function addToCart(recipe) {
         cart.push(cartItem);
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartBadge();
     var dialog = document.getElementById('successDialog');
     dialog.showModal();
     document.body.style.overflow = 'hidden';
@@ -91,7 +94,13 @@ function addToCart(recipe) {
 }
 var baseServing = 2;
 
-
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.length;
+  
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.textContent = count;
+}
 function displayRecipeDetails(recipe) {
     console.log(recipe)
     detailsRow.innerHTML = `
