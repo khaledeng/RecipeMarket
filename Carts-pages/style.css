@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 
-/* =====================
-   الستايل المشترك
-   ===================== */
 
 * {
   box-sizing: border-box;
@@ -16,10 +13,6 @@ body {
   color: #2a2a2a;
   direction: rtl;
 }
-
-/* =====================
-   الهيدر (مشترك في كل الصفحات)
-   ===================== */
 
 .topbar {
   display: flex;
@@ -136,9 +129,6 @@ body {
   color: white;
 }
 
-/* =====================
-   ستايل الصفحات التانية (layout)
-   ===================== */
 
 .layout {
   display: flex;
@@ -167,9 +157,7 @@ body {
   margin-bottom: 6px;
 }
 
-/* =====================
-   صفحة السلة فقط (cart-layout)
-   ===================== */
+
 
 .cart-layout {
   display: flex;

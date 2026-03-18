@@ -1,11 +1,9 @@
-// ── تحميل السلة وحساب الأسعار ──
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function calcTotals() {
   let sub = 0;
 
   cart.forEach(function(recipe) {
-    // بيتعامل مع الصيغتين القديمة والجديدة
     const items = recipe.items || recipe.recipeIngredients || [];
     items.forEach(function(item) {
       const price = item.price || 0;
@@ -21,26 +19,22 @@ function calcTotals() {
   document.getElementById("tax-total").textContent      = tax + " ر.س";
   document.getElementById("final-total").textContent    = total;
 }
-// ── اختيار طريقة الدفع ──
 function selectPay(el) {
   document.querySelectorAll(".pay-option").forEach(function(opt) {
     opt.classList.remove("active");
   });
   el.classList.add("active");
 
-  // إخفاء أو إظهار حقول البطاقة
   const isCard = el.querySelector(".pay-name").textContent.includes("بطاقة");
   document.getElementById("card-fields").style.display = isCard ? "flex" : "none";
 }
 
-// ── تنسيق رقم البطاقة ──
 document.getElementById("card-num").addEventListener("input", function() {
   let val = this.value.replace(/\D/g, "");
   val = val.match(/.{1,4}/g)?.join(" ") || val;
   this.value = val;
 });
 
-// ── تأكيد الطلب ──
 function confirmOrder() {
   const city    = document.querySelectorAll(".field input")[0].value;
   const area    = document.querySelectorAll(".field input")[1].value;
@@ -66,7 +60,6 @@ function updateCartBadge() {
   if (badge) badge.textContent = count;
 }
 
-// ── إشعار ──
 function toast(msg) {
   const el = document.getElementById("toast");
   el.textContent = msg;
@@ -74,6 +67,5 @@ function toast(msg) {
   setTimeout(function() { el.classList.remove("show"); }, 2500);
 }
 
-// ── تشغيل ──
 calcTotals();
 updateCartBadge();

@@ -1,7 +1,5 @@
-// ── تحميل السلة من localStorage أو بيانات تجريبية ──
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// ── تحويل البيانات القديمة (recipeIngredients) للصيغة الجديدة (items) ──
 cart = cart.map(function(recipe) {
   return {
     name: recipe.name || recipe.recipeName || "وصفة",
@@ -16,7 +14,6 @@ cart = cart.map(function(recipe) {
   };
 });
 
-// ── إيموجي للمكونات ──
 function getEmoji(name) {
   const map = { "دجاج":"🍗","لحم":"🥩","جبن":"🧀","طماطم":"🍅","ثوم":"🧄","ليمون":"🍋","بيض":"🥚","خيار":"🥒" };
   for (const key in map) {
@@ -25,7 +22,6 @@ function getEmoji(name) {
   return "🛒";
 }
 
-// ── حساب الأسعار ──
 function updateTotals() {
   let sub = 0, count = 0;
 
@@ -49,15 +45,12 @@ function updateTotals() {
   dell.style.color="green"
 }
 
-// ── رسم السلة ──
 function render() {
   const cartEl = document.getElementById("cart");
   cartEl.innerHTML = "";
 
-  // فلتر الوصفات الفارغة
   const filled = cart.filter(function(r) { return r.items.length > 0; });
 
-  // لو السلة فارغة
   if (filled.length === 0) {
     cartEl.innerHTML = `
       <div class="empty">
@@ -69,7 +62,6 @@ function render() {
     return;
   }
 
-  // رسم كل وصفة
   cart.forEach(function(recipe, ri) {
     if (!recipe.items.length) return;
 
@@ -108,7 +100,6 @@ function render() {
   updateTotals();
 }
 
-// ── الأحداث ──
 document.getElementById("cart").addEventListener("click", function(e) {
   const btn = e.target
   if (!btn.dataset.act) return; 
@@ -134,11 +125,7 @@ document.getElementById("buy-btn").addEventListener("click", function() {
   toast("✅ تم إرسال طلبك!");
 });
 
-// document.getElementById("btn-back").addEventListener("click",function(){
-//   window.location.href="../Recipes-page/recipes.html";
-// })
 
-// ── إشعار ──
 function toast(msg) {
   const el = document.getElementById("toast");
   el.textContent = msg;
@@ -154,11 +141,9 @@ function updateCartBadge() {
   if (badge) badge.textContent = count;
 }
 
-// استدعيها في أول تشغيل الصفحة
 updateCartBadge();
 
 
 
 
-// ── تشغيل ──
 render();
