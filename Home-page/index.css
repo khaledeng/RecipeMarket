@@ -233,7 +233,13 @@ a {
   overflow: hidden;
   position: relative;
 }
-
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,90,14,0.3), transparent);
+  pointer-events: none;
+}
 .hero img {
   width: 100%;
   height: 100%;
@@ -270,12 +276,26 @@ a {
 }
 
 .hero button {
-  width: 150px;
+  width: 160px;
   padding: 12px;
   border: none;
-  background: #ff5a0e;
+  background: linear-gradient(45deg, #ff5a0e, #ff8c42);
   color: white;
   border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(255, 90, 14, 0.4);
+}
+
+.hero button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 90, 14, 0.6);
+}
+
+h2 {
+  background: linear-gradient(45deg, #ff6200, #ff9a3c);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* categories section */
@@ -366,19 +386,27 @@ a {
 
 /* recipe card */
 .card {
-  border: 1px solid #eee;
-  border-radius: 18px;
+  position: relative;
   overflow: hidden;
-  background: white;
-  transition: all 0.3s ease;
-  cursor: pointer;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+.card::after {
+  content: "عرض سريع";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  font-size: 18px;
+  transition: 0.3s;
 }
 
+.card:hover::after {
+  opacity: 1;
+}
 /* image */
 .card img {
   width: 100%;
