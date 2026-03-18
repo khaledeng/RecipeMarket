@@ -81,23 +81,23 @@ function next() {
   }, 400);
 }
 
-function render(r) {
-  const img = document.getElementById("heroImg");
-  img.onload = () => {
-    document.getElementById("heroSkeleton").style.display = "none";
-    document.getElementById("heroContent").style.opacity = "1";
-  };
-  img.src = r.image;
-  img.alt = r.name;
-  document.getElementById("heroTitle").textContent = r.name;
-  document.getElementById("heroDesc").textContent = r.description;
-  document.getElementById("heroTime").textContent =
-    `${r.prepTime + r.cookTime} دقيقة`;
-  document.getElementById("heroServings").textContent = `${r.servings} أشخاص`;
-  document.getElementById("heroCalories").textContent = `${r.calories} سعرة`;
-  document.getElementById("heroBtn").onclick = () =>
-    (location.href = `../recipe/recipe.html?id=${r.id}`);
-}
+// function render(r) {
+//   const img = document.getElementById("heroImg");
+//   img.onload = () => {
+//     document.getElementById("heroSkeleton").style.display = "none";
+//     document.getElementById("heroContent").style.opacity = "1";
+//   };
+//   img.src = r.image;
+//   img.alt = r.name;
+//   document.getElementById("heroTitle").textContent = r.name;
+//   document.getElementById("heroDesc").textContent = r.description;
+//   document.getElementById("heroTime").textContent =
+//     `${r.prepTime + r.cookTime} دقيقة`;
+//   document.getElementById("heroServings").textContent = `${r.servings} أشخاص`;
+//   document.getElementById("heroCalories").textContent = `${r.calories} سعرة`;
+//   document.getElementById("heroBtn").onclick = () =>
+//     (location.href = `../recipe/recipe.html?id=${r.id}`);
+// }
 
 async function loadPopular() {
   let res = await fetch("../data/recipes.json");
