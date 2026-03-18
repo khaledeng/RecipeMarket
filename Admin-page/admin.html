@@ -35,40 +35,40 @@
         <h1>لوحة الإحصائيات الشاملة</h1>
         <p>مرحباً بك في لوحة تحكم سفرة - آخر تحديث: اليوم</p>
       </div>
-      <button class="add-recipe-btn">+ إضافة وصفة جديدة</button>
+      <button class="add-recipe-btn" id="addRecipeBtn">+ إضافة وصفة جديدة</button>
     </div>
 
     <!-- Stats Cards -->
     <div class="stats-grid">
-      <div class="stat-card">
+      <div class="stat-card" style="animation-delay: 0s">
         <div class="stat-icon orange">💰</div>
         <div class="stat-info">
           <p class="stat-label">إجمالي الأرباح</p>
-          <h3 class="stat-value">45,200 ج</h3>
+          <h3 class="stat-value" data-target="45200">0</h3>
           <span class="stat-change up">↑ 3.2%</span>
         </div>
       </div>
-      <div class="stat-card">
+      <div class="stat-card" style="animation-delay: 0.1s">
         <div class="stat-icon blue">🛒</div>
         <div class="stat-info">
           <p class="stat-label">إجمالي الطلبات</p>
-          <h3 class="stat-value">1,280</h3>
+          <h3 class="stat-value" data-target="1280">0</h3>
           <span class="stat-change up">↑ 5.1%</span>
         </div>
       </div>
-      <div class="stat-card">
+      <div class="stat-card" style="animation-delay: 0.2s">
         <div class="stat-icon green">👥</div>
         <div class="stat-info">
           <p class="stat-label">المستخدمين</p>
-          <h3 class="stat-value">850</h3>
+          <h3 class="stat-value" data-target="850">0</h3>
           <span class="stat-change up">↑ 2.4%</span>
         </div>
       </div>
-      <div class="stat-card">
+      <div class="stat-card" style="animation-delay: 0.3s">
         <div class="stat-icon red">🍽️</div>
         <div class="stat-info">
           <p class="stat-label">الوصفات</p>
-          <h3 class="stat-value">30</h3>
+          <h3 class="stat-value" data-target="30">0</h3>
           <span class="stat-change down">↓ 1.0%</span>
         </div>
       </div>
@@ -76,58 +76,39 @@
 
     <!-- Chart + Top Recipes -->
     <div class="middle-grid">
-
-      <!-- Chart -->
       <div class="card chart-card">
         <h3>إجمالي المبيعات</h3>
         <canvas id="salesChart"></canvas>
       </div>
-
-      <!-- Top Recipes -->
       <div class="card top-recipes-card">
         <h3>أكثر الوصفات طلباً</h3>
         <ul class="top-recipes-list">
-          <li>
+          <li style="animation-delay:0.1s">
             <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/meat-3007395_640.jpg" alt="" />
-            <div>
-              <p>دجاج مشوي بالزعتر</p>
-              <span>850 طلب</span>
-            </div>
+            <div><p>دجاج مشوي بالزعتر</p><span>850 طلب</span></div>
             <strong>63,750 ج</strong>
           </li>
-          <li>
+          <li style="animation-delay:0.2s">
             <img src="https://static.srpcdigital.com/styles/1037xauto/public/2024-07/727982.jpg.webp" alt="" />
-            <div>
-              <p>كشري مصري</p>
-              <span>720 طلب</span>
-            </div>
+            <div><p>كشري مصري</p><span>720 طلب</span></div>
             <strong>18,000 ج</strong>
           </li>
-          <li>
+          <li style="animation-delay:0.3s">
             <img src="https://www.smartpack-eg.com/rec/upload/8f224763c686b8917ebe1245f55e521c.jpg" alt="" />
-            <div>
-              <p>حمص بالطحينة</p>
-              <span>540 طلب</span>
-            </div>
+            <div><p>حمص بالطحينة</p><span>540 طلب</span></div>
             <strong>17,280 ج</strong>
           </li>
-          <li>
+          <li style="animation-delay:0.4s">
             <img src="https://img.youm7.com/large/20220922010444444.jpg" alt="" />
-            <div>
-              <p>تبولة سورية</p>
-              <span>430 طلب</span>
-            </div>
+            <div><p>تبولة سورية</p><span>430 طلب</span></div>
             <strong>17,200 ج</strong>
           </li>
         </ul>
       </div>
-
     </div>
 
     <!-- Orders Table + Users -->
     <div class="bottom-grid">
-
-      <!-- Orders Table -->
       <div class="card orders-card">
         <div class="card-header">
           <h3>آخر الطلبات</h3>
@@ -147,96 +128,120 @@
           </thead>
           <tbody id="ordersTableBody">
             <tr>
-              <td>#ORD-1234</td>
-              <td>أحمد علي</td>
-              <td>دجاج مشوي بالزعتر</td>
-              <td>75 ج</td>
-              <td>2025-03-01</td>
+              <td>#ORD-1234</td><td>أحمد علي</td><td>دجاج مشوي بالزعتر</td><td>75 ج</td><td>2025-03-01</td>
               <td><span class="badge delivered">تم التوصيل</span></td>
-              <td><button class="action-btn delete" onclick="deleteRow(this)">حذف</button></td>
+              <td class="actions-cell">
+                <button class="action-btn status-btn" onclick="changeStatus(this)">تغيير الحالة</button>
+                <button class="action-btn delete" onclick="deleteRow(this)">حذف</button>
+              </td>
             </tr>
             <tr>
-              <td>#ORD-1235</td>
-              <td>سارة محمد</td>
-              <td>كشري مصري</td>
-              <td>25 ج</td>
-              <td>2025-03-02</td>
+              <td>#ORD-1235</td><td>سارة محمد</td><td>كشري مصري</td><td>25 ج</td><td>2025-03-02</td>
               <td><span class="badge pending">قيد التنفيذ</span></td>
-              <td><button class="action-btn delete" onclick="deleteRow(this)">حذف</button></td>
+              <td class="actions-cell">
+                <button class="action-btn status-btn" onclick="changeStatus(this)">تغيير الحالة</button>
+                <button class="action-btn delete" onclick="deleteRow(this)">حذف</button>
+              </td>
             </tr>
             <tr>
-              <td>#ORD-1236</td>
-              <td>محمود حسن</td>
-              <td>حمص بالطحينة</td>
-              <td>32 ج</td>
-              <td>2025-03-03</td>
+              <td>#ORD-1236</td><td>محمود حسن</td><td>حمص بالطحينة</td><td>32 ج</td><td>2025-03-03</td>
               <td><span class="badge delivered">تم التوصيل</span></td>
-              <td><button class="action-btn delete" onclick="deleteRow(this)">حذف</button></td>
+              <td class="actions-cell">
+                <button class="action-btn status-btn" onclick="changeStatus(this)">تغيير الحالة</button>
+                <button class="action-btn delete" onclick="deleteRow(this)">حذف</button>
+              </td>
             </tr>
             <tr>
-              <td>#ORD-1237</td>
-              <td>فاطمة أحمد</td>
-              <td>تبولة سورية</td>
-              <td>40 ج</td>
-              <td>2025-03-04</td>
+              <td>#ORD-1237</td><td>فاطمة أحمد</td><td>تبولة سورية</td><td>40 ج</td><td>2025-03-04</td>
               <td><span class="badge cancelled">ملغي</span></td>
-              <td><button class="action-btn delete" onclick="deleteRow(this)">حذف</button></td>
+              <td class="actions-cell">
+                <button class="action-btn status-btn" onclick="changeStatus(this)">تغيير الحالة</button>
+                <button class="action-btn delete" onclick="deleteRow(this)">حذف</button>
+              </td>
             </tr>
             <tr>
-              <td>#ORD-1238</td>
-              <td>خالد إبراهيم</td>
-              <td>فلافل فلسطينية</td>
-              <td>28 ج</td>
-              <td>2025-03-05</td>
+              <td>#ORD-1238</td><td>خالد إبراهيم</td><td>فلافل فلسطينية</td><td>28 ج</td><td>2025-03-05</td>
               <td><span class="badge pending">قيد التنفيذ</span></td>
-              <td><button class="action-btn delete" onclick="deleteRow(this)">حذف</button></td>
+              <td class="actions-cell">
+                <button class="action-btn status-btn" onclick="changeStatus(this)">تغيير الحالة</button>
+                <button class="action-btn delete" onclick="deleteRow(this)">حذف</button>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Users -->
       <div class="card users-card">
         <h3>إدارة المستخدمين</h3>
         <ul class="users-list">
-          <li>
-            <div class="user-avatar">أ</div>
-            <div class="user-info">
-              <p>أحمد علي</p>
-              <span>ahmed@email.com</span>
-            </div>
-            <span class="user-role admin">أدمن</span>
-          </li>
-          <li>
-            <div class="user-avatar">س</div>
-            <div class="user-info">
-              <p>سارة محمد</p>
-              <span>sara@email.com</span>
-            </div>
-            <span class="user-role user">مستخدم</span>
-          </li>
-          <li>
-            <div class="user-avatar">م</div>
-            <div class="user-info">
-              <p>محمود حسن</p>
-              <span>mahmoud@email.com</span>
-            </div>
-            <span class="user-role user">مستخدم</span>
-          </li>
-          <li>
-            <div class="user-avatar">ف</div>
-            <div class="user-info">
-              <p>فاطمة أحمد</p>
-              <span>fatma@email.com</span>
-            </div>
-            <span class="user-role user">مستخدم</span>
-          </li>
+          <li><div class="user-avatar">أ</div><div class="user-info"><p>أحمد علي</p><span>ahmed@email.com</span></div><span class="user-role admin">أدمن</span></li>
+          <li><div class="user-avatar">س</div><div class="user-info"><p>سارة محمد</p><span>sara@email.com</span></div><span class="user-role user">مستخدم</span></li>
+          <li><div class="user-avatar">م</div><div class="user-info"><p>محمود حسن</p><span>mahmoud@email.com</span></div><span class="user-role user">مستخدم</span></li>
+          <li><div class="user-avatar">ف</div><div class="user-info"><p>فاطمة أحمد</p><span>fatma@email.com</span></div><span class="user-role user">مستخدم</span></li>
         </ul>
       </div>
-
     </div>
-
   </div>
+
+  <!-- Modal إضافة وصفة -->
+  <div class="modal-overlay" id="addRecipeModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>➕ إضافة وصفة جديدة</h2>
+        <button class="close-modal" id="closeModal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>اسم الوصفة</label>
+          <input type="text" id="recipeName" placeholder="مثال: كشري مصري" />
+        </div>
+        <div class="form-group">
+          <label>رابط الصورة</label>
+          <input type="text" id="recipeImage" placeholder="https://..." />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>السعر (ج)</label>
+            <input type="number" id="recipePrice" placeholder="50" />
+          </div>
+          <div class="form-group">
+            <label>وقت التحضير (دقيقة)</label>
+            <input type="number" id="recipeTime" placeholder="30" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>التصنيف</label>
+            <select id="recipeCategory">
+              <option value="breakfast">فطار</option>
+              <option value="lunch">غداء</option>
+              <option value="dinner">عشاء</option>
+              <option value="dessert">حلويات</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>الصعوبة</label>
+            <select id="recipeDifficulty">
+              <option value="easy">سهل</option>
+              <option value="medium">متوسط</option>
+              <option value="hard">صعب</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>الوصف</label>
+          <textarea id="recipeDesc" placeholder="وصف مختصر للوصفة..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="save-btn" id="saveRecipeBtn">💾 حفظ الوصفة</button>
+        <button class="cancel-modal-btn" id="cancelModal">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification -->
+  <div class="admin-notification" id="adminNotification"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="admin.js"></script>

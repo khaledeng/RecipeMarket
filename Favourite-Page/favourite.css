@@ -562,3 +562,130 @@ footer {
   padding-top: 20px;
   color: #cbd5e1;
 }
+
+/* ===== التحسينات الجديدة ===== */
+
+/* عداد الوصفات */
+.counter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 800;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+/* أنيميشن الإزالة */
+.recipe-card.removing {
+  animation: removeCard 0.4s ease forwards;
+}
+
+@keyframes removeCard {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.05); opacity: 0.5; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+/* وصف الوصفة */
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* المعلومات الغذائية */
+.card-nutrients {
+  display: flex;
+  justify-content: space-between;
+  background: #f8faff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.card-nutrients span {
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  font-weight: 600;
+}
+
+/* badge الصعوبة */
+.difficulty-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+/* ===== Shimmer Loading ===== */
+.shimmer-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.shimmer-img {
+  height: 220px;
+  background: linear-gradient(90deg, #e5e8f1 25%, #f3f5fb 50%, #e5e8f1 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.shimmer-line {
+  height: 16px;
+  border-radius: 8px;
+  margin: 12px 16px;
+  background: linear-gradient(90deg, #e5e8f1 25%, #f3f5fb 50%, #e5e8f1 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.shimmer-line.short { width: 60%; }
+.shimmer-line.shorter { width: 40%; }
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* ===== نبضة القلب ===== */
+@keyframes heartBeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.4); }
+  50%  { transform: scale(1); }
+  75%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.heart-btn.beating {
+  animation: heartBeat 0.5s ease;
+}
+
+/* ===== فلتر أنيميشن ===== */
+.recipes-grid.filter-transition {
+  animation: filterFade 0.3s ease;
+}
+
+@keyframes filterFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
