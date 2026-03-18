@@ -54,7 +54,16 @@ function confirmOrder() {
   toast("✅ تم تأكيد طلبك بنجاح!");
   setTimeout(function() {
     localStorage.removeItem("cart");
+    updateCartBadge();
   }, 1500);
+}
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.length;
+  
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.textContent = count;
 }
 
 // ── إشعار ──
@@ -67,3 +76,4 @@ function toast(msg) {
 
 // ── تشغيل ──
 calcTotals();
+updateCartBadge();
