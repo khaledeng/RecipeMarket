@@ -1,5 +1,5 @@
 var detailsRow = document.getElementById("detailsRow");
-var nav = document.querySelector('nav');
+var header = document.querySelector('header');
 var selectedIngredients = [];
 var allRecipes = []; 
 
@@ -28,13 +28,13 @@ var id = params.get('id');
 
 document.addEventListener('scroll', function () {
     if (window.scrollY > 10) {
-        nav.classList.add('scrolled-bg');
-        nav.style.backgroundColor = "hsla(0, 0%, 100%, 0.70)"
+        header.classList.add('scrolled-bg');
+        header.style.backgroundColor = "hsla(0, 0%, 100%, 0.70)"
 
     }
     else {
-        nav.classList.remove('scrolled-bg');
-        nav.style.backgroundColor = "#F8F6F6"
+        header.classList.remove('scrolled-bg');
+        header.style.backgroundColor = "#F8F6F6"
     }
 })
 
@@ -309,3 +309,4 @@ function changRecipe(newId) {
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
