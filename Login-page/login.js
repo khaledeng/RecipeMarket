@@ -60,7 +60,7 @@ loginBtn.onclick = function () {
                 found = true;
                 localStorage.setItem("role", u.role);
                 if (u.role == "admin") {
-                    window.location.href = "../Recipes-page/recipes.html";//الداشبورد
+                    window.location.href = "../Admin-page/admin.html";//الداشبورد
                 }
                 else {
 
