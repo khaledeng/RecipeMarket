@@ -19,18 +19,27 @@ var pageSize = 12;
 var favorites = JSON.parse(localStorage.getItem("favoriteRecipes") || "[]");
 
 function saveFavorites(){
-localStorage.setItem("favoriteRecipes", JSON.stringify(favorites));
+  localStorage.setItem("favoriteRecipes", JSON.stringify(favorites));
 }
 
 function getSelectedValue(list){
-for(var r of list){
-if(r.checked){
-return r.value;
-}
-}
-return "";
+  for(var r of list){
+    if(r.checked){
+      return r.value;
+    }
+  }
+  return "";
 }
 
+function showToast(message, isRemove) {
+  var toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.className = "toast show" + (isRemove ? " remove" : "");
+  setTimeout(function() {
+    toast.classList.remove("show");
+  }, 2500);
+}
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET","https://raw.githubusercontent.com/khaledeng/RecipeMarket/refs/heads/main/data/recipes.json");
@@ -172,12 +181,14 @@ return x!=id
 });
 
 btn.classList.remove("active");
+showToast("تم إزالته من المفضلة", true);
 
 }else{
 
 favorites.push(id);
 
 btn.classList.add("active");
+showToast("تم إضافته في المفضلة", false);
 
 }
 
