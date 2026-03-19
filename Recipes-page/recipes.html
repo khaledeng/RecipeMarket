@@ -21,9 +21,12 @@
 
   <div class="topbar-right">
     <a href="../Home-page/Index.html">الرئيسية</a>
-    <a href="../recipes.html" class="active">الوصفات</a>
-    <a href="../favorite.html">المفضلة</a>
-    <a href="../Carts-pages/cart.html">السله</a>
+    <a href="./recipes.html" class="active">الوصفات</a>
+    <a href="../Favourite-Page/Favourite.html">المفضلة</a>
+    <a href="../Carts-pages/cart.html" class="cart-link">
+      السلة <i class="fa-solid fa-cart-arrow-down"></i>
+      <span class="cart-badge" id="cart-count">0</span>
+    </a>
   </div>
 
   <div class="top-search">
@@ -32,8 +35,10 @@
   </div>
 
    <div class="topbar-left">
-    <button class="avatar-btn" aria-label="حساب المستخدم">👤</button>
-    <button class="notif-btn" aria-label="الإشعارات">🔔</button>
+    <a href="../Login-page/login.html">
+      <button class="avatar-btn" aria-label="حساب المستخدم">👤</button>
+    </a>
+    
   </div>
  
 </header>
@@ -166,6 +171,8 @@
 
       <div class="copyright">جميع الحقوق محفوظة © 2024 سفرة للوصفات والطبخ</div>
     </footer>
+
+  <div class="toast" id="toast"></div>
 
 <script src="recipes.js"></script>
 
