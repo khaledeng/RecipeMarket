@@ -623,3 +623,286 @@ footer {
   padding-top: 20px;
   color: #cbd5e1;
 }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .hero-content {
+    width: 60%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .my-recipes {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  
+  .topbar-right {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .topbar-right a {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  
+  .top-search {
+    order: 2;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .topbar-left {
+    order: 4;
+  }
+  
+  .hero {
+    height: 350px;
+    margin: 20px;
+  }
+  
+  .hero-content {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    top: auto;
+    bottom: 0;
+  }
+  
+  .hero h1 {
+    font-size: 24px;
+  }
+  
+  .hero p {
+    font-size: 14px;
+  }
+  
+  .categories,
+  .popular {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .subscribe-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .subscribe .image img {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+  }
+  
+  .form {
+    flex-direction: column;
+  }
+  
+  .form button {
+    width: 100%;
+  }
+  
+  .form input {
+    width: 100%;
+  }
+  
+  footer {
+    padding: 50px 30px 20px;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .social {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .apps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .app-btn {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar-right a {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+  
+  .avatar-btn,
+  .notif-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  
+  .recipes-text {
+    font-size: 14px;
+  }
+  
+  .recipes-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+  
+  .hero {
+    height: 280px;
+    margin: 15px;
+    border-radius: 15px;
+  }
+  
+  .hero h1 {
+    font-size: 20px;
+  }
+  
+  .hero p {
+    font-size: 12px;
+  }
+  
+  .hero-meta {
+    font-size: 12px;
+    gap: 10px;
+  }
+  
+  .hero button {
+    width: 140px;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .badge {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+  
+  .categories h2,
+  .popular h2 {
+    font-size: 20px;
+  }
+  
+  .cat {
+    min-width: 120px;
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+  
+  .popular-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .card img {
+    height: 140px;
+  }
+  
+  .card-body h3 {
+    font-size: 16px;
+  }
+  
+  .card-body p {
+    font-size: 12px;
+  }
+  
+  .card-body button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .subscribe h2 {
+    font-size: 28px;
+  }
+  
+  .subscribe p {
+    font-size: 14px;
+  }
+  
+  .scroll-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .topbar-right {
+    gap: 5px;
+  }
+  
+  .topbar-right a {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+  
+  .hero {
+    height: 240px;
+    margin: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 18px;
+  }
+  
+  .hero-content {
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .categories,
+  .popular {
+    margin: 15px;
+    padding: 15px;
+  }
+  
+  .cat {
+    min-width: 100px;
+    padding: 15px 10px;
+    font-size: 12px;
+  }
+  
+  .popular-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .subscribe-container {
+    padding: 30px 15px;
+    border-radius: 20px;
+  }
+  
+  .subscribe h2 {
+    font-size: 24px;
+  }
+  
+  footer {
+    padding: 40px 20px 15px;
+  }
+}
